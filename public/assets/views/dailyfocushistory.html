@@ -1,9 +1,8 @@
 <div class="">
   <h1>Here are the past daily focuses.</h1>
+  {{test}}
 </div>
 <div ng-repeat="focus in focuses" >
   <h2>Focus:</h2>
-  {{focus.focus}}
-  <h2>Date:</h2>
-  {{focus.timestamp}}
+  "{{focus.focus}}" set on {{focus.timestamp}}
 </div>

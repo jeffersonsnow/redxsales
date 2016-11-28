@@ -18,5 +18,8 @@ angular.module('app').controller('mainCtrl', function($scope, mainService, $http
     console.log(currentFocus);
   });
   $scope.showForm = true;
-  
+  $scope.getUser = function(loginService){
+      return loginService.getUser();
+    };
+
 });

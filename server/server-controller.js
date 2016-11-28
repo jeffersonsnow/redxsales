@@ -25,6 +25,27 @@ module.exports = {
           res.json(response);
         }
       });
-}
+},
+  getAllFocuses: function(req, res, next){
+    db.get_all([], function(err, response){
+      if(err){
+        console.log('Game over, man!');
+        res.json(err);
+      }else{
+        console.log('Working?');
+        res.json(response);
+      }
+    });
+  },
+
+  checkAuth: function(req, res, next){
+    console.log(req.user);
+    if(req.user){
+      res.json(req.user);
+    } else {
+      console.log('Unauthorized');
+      res.json('Unauthorized');
+    }
+  }
 
 };
