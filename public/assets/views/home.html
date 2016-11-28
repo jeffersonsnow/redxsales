@@ -1,0 +1,14 @@
+<h1>This is the Home Page!</h1>
+
+<div class="">
+  <h2>Current Focus:</h2>
+  {{currentFocus.focus}}
+</div>
+<div ng-show="showForm" class="form-group">
+  <label for='focus'>What behavior will make you more money today?</label>
+  <input type="text" class='form-control' ng-model="formModel.focus" id='focus'></input>
+  <div class="form-group">
+    <button class="btn btn-primary" ng-click="submitFocus() ; showForm = !showForm ; location.reload()">Set Focus</button>
+  </div>
+  <!-- <pre>{{formModel | json}}</pre> -->
+</div>
