@@ -5,11 +5,9 @@ module.exports = {
   createFocus: function(req, res, next){
         db.create_focus([req.body.focus, req.body.time], function(err, response){
           if(err){
-            console.log("error, dude!", err);
             res.json(err);
           }
           else {
-          console.log("I got this far");
           res.json(response);
         }
       });
@@ -46,6 +44,22 @@ module.exports = {
       console.log('Unauthorized');
       res.json('Unauthorized');
     }
+  },
+
+  postSale: function(req, res, next){
+    var body = req.body;
+    db.post_sale([body.rep, body.time, body.name, body.amount, body.setupfee,
+      body.expireds, body.fsbos, body.frbos, body.preforeclosures, body.onyx, body.storm,
+      body.geo, body.stormMulti], function(err, response){
+        if(err){
+          console.log("error, dude!", err);
+          res.json(err);
+        }
+        else {
+        console.log("Sale posted?");
+        res.json(response);
+      }
+    });
   }
 
 };
