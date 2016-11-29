@@ -28,7 +28,22 @@ angular.module('app',['ui.router'])
     .state('dailyfocus',{
       url: '/dailyfocus',
       templateUrl: './assets/views/dailyfocushistory.html',
-      controller: 'dailyFocusCtrl'
+      controller: 'dailyFocusCtrl',
+      resolve: {
+        check: function(loginService, $state){
+          return loginService.checkAuthentication().then(function(response){
+              console.log(response);
+            if(response === "Unauthorized"){
+              $state.go('login');
+              alert("Please login first.");
+            } else {
+              console.log("Also this");
+              return response.data;
+            }
+          });
+        }
+      }
+
     })
     // .state('about',{
     //   url: '/about',

@@ -2,7 +2,7 @@
   <h1>Here are the past daily focuses.</h1>
   {{test}}
 </div>
-<div ng-repeat="focus in focuses" >
+<div ng-repeat="focus in focuses | filter: focusFilter | orderBy: '-timestamp'" >
   <h2>Focus:</h2>
-  "{{focus.focus}}" set on {{focus.timestamp}}
+  "{{focus.focus}}" set on {{focus.timestamp | date:'short'}}
 </div>

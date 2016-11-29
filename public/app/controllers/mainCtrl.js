@@ -1,6 +1,7 @@
 angular.module('app').controller('mainCtrl', function($scope, mainService, $http){
   $scope.test = 'angular is working';
   $scope.formModel = {};
+
   $scope.submitFocus = function(){
     $scope.formModel.time = new Date();
     console.log('submitted!');
@@ -18,8 +19,12 @@ angular.module('app').controller('mainCtrl', function($scope, mainService, $http
     console.log(currentFocus);
   });
   $scope.showForm = true;
-  $scope.getUser = function(loginService){
-      return loginService.getUser();
-    };
+
+  $scope.getUser = mainService.getUser().then(function(user){
+    $scope.user = user;
+    // mainService.user.name = user.name;
+  });
+
+
 
 });

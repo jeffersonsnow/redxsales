@@ -36,7 +36,7 @@ passport.use(new GoogleStrategy({
     callbackURL: "/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, done) {
-    console.log(profile);
+    // console.log(profile);
     db.users.findOne({google_id: profile.id}, function(err, dbRes) {
       if (dbRes === undefined) {
         console.log("User not found. Creating...");
@@ -54,11 +54,22 @@ passport.use(new GoogleStrategy({
 app.get('/auth/google', passport.authenticate('google',{scope: ['https://www.googleapis.com/auth/plus.me', 'https://www.googleapis.com/auth/userinfo.email', 'https://www.googleapis.com/auth/userinfo.profile']}));
 app.get('/auth/google/callback',
   passport.authenticate('google', {
-    successRedirect: '/#/home',
     failureRedirect: '/#/' }),
   function(req, res) {
-  console.log(req.session);
+  res.redirect('/#/home');
+  // console.log("this is the droid you're looking for");
+  // res.send(req.user);
   });
+
+
+  // app.get('/auth/google/callback',
+  //   passport.authenticate('google', {
+  //     successRedirect: '/me',
+  //     failureRedirect: '/#/' }),
+  //   function(req, res) {
+  //   console.log(req.session);
+  //   });
+  //
 
   passport.serializeUser(function(user, done) {
     done(null, user);
@@ -69,6 +80,7 @@ app.get('/auth/google/callback',
   });//gets data from session and preps for req.user
 
   app.get('/me', function(req, res){
+    console.log('check this out');
     res.send(req.user);
   });
 
