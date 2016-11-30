@@ -20,7 +20,6 @@ module.exports = {
           console.log('error, dude!', err);
           res.json(err);
         } else {
-          console.log('Did you get current focus?');
           res.json(response);
         }
       });
@@ -65,6 +64,21 @@ module.exports = {
         res.json(response);
       }
     });
+  },
+
+  getSalesForWeek: function(req, res, next){
+    if(req.params.id){
+      console.log('step into getSalesForWeek');
+    db.get_weeks_sales([req.params.id], function(err, response){
+      if(err){
+        console.log('Failure on get Sales');
+        res.json(err);
+      } else {
+        console.log('get sales working?');
+        res.json(response);
+      }
+    });
+    }
   }
 
 };

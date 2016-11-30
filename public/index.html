@@ -7,7 +7,7 @@
   <body ng-controller="mainCtrl">
     <ul class="primary-nav">
                     <li>
-                        <a ui-sref='home'>Main</a>
+                        <a ui-sref='home'>Home</a>
                     </li>
                     <li>
                         <a ui-sref="dailyfocus">Daily Focus</a>
@@ -21,11 +21,14 @@
                 </ul>
     {{test}}
 
-<h1>html test!</h1>
-    <ui-view></ui-view>
 
+    <ui-view></ui-view>
+    <script src="http://code.jquery.com/jquery-3.1.1.js"
+            integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+            crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.js"></script>
     <script src="./app/app.js"></script>
     <script src="./app/controllers/mainCtrl.js"></script>
     <script src="./app/services/mainService.js"></script>
@@ -33,6 +36,8 @@
     <script src="./app/services/dailyFocusService.js"></script>
     <script src="./app/directives/dailyfocusDirective.js"></script>
     <script src="./app/services/loginService.js"></script>
+    <script src="./app/controllers/commissionCtrl.js"></script>
+    <script src="./app/services/commissionService.js"></script>
     <!-- <script src="./app/controllers/loginCtrl"></script>
     <script src="./app/directives/loginDirective"></script> -->
 

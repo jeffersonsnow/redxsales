@@ -1,4 +1,4 @@
-angular.module('app').controller('mainCtrl', function($scope, mainService, $http){
+angular.module('app').controller('mainCtrl', function($scope, mainService, $http, $state){
   $scope.test = 'angular is working';
   $scope.formModel = {};
   $scope.saleModel = {};
@@ -6,6 +6,7 @@ angular.module('app').controller('mainCtrl', function($scope, mainService, $http
   $scope.submitFocus = function(){
           $scope.formModel.time = new Date();
           $scope.formModel.user_id = $scope.user.user_id;
+          $state.reload();
           console.log('submitted!');
           console.log($scope.formModel);
           // $http.post("postgres://Snow@localhost/redxsalesteam")
@@ -21,6 +22,7 @@ angular.module('app').controller('mainCtrl', function($scope, mainService, $http
     $scope.saleModel.time = new Date();
     $scope.saleModel.rep = $scope.user.name;
     $scope.saleModel.user_id = $scope.user.user_id;
+    $state.reload();
     console.log($scope.saleModel);
     return $http({
       method: 'POST',

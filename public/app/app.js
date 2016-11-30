@@ -1,4 +1,4 @@
-angular.module('app',['ui.router'])
+angular.module('app',['ui.router', 'ngGrid'])
   .config(function($stateProvider, $urlRouterProvider){
     $stateProvider
     .state('home',{
@@ -41,10 +41,11 @@ angular.module('app',['ui.router'])
       }
 
     })
-    // .state('about',{
-    //   url: '/about',
-    //   templateUrl: '/views/about.html'
-    // })
+    .state('commissions',{
+      url: '/commissions',
+      templateUrl: './assets/views/commissions.html',
+      controller: 'commissionCtrl'
+    })
     // .state('details',{
     //   url:'/details/:id',
     //   templateUrl: '/views/product-details.html',

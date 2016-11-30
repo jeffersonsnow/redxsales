@@ -95,7 +95,7 @@ app.post('/api/sales', controller.postSale);
 app.get('/api/dailyfocus/:id', controller.getCurrentFocus);
 app.get('/api/allfocuses/:id', controller.getAllFocuses);
 app.get('/api/authentication', controller.checkAuth);
-
+app.get('/api/weeklysales/:id', controller.getSalesForWeek);
 
 
 

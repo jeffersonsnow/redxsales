@@ -1,6 +1,15 @@
 <h1>Welcome to the the Home Page, {{user.name}}!</h1>
 user number {{user.user_id}}
 
+<div class="Sales Table">
+
+</div>
+
+
+<!-- <div class="gridStyle" ng-grid="gridOptions"></div> -->
+
+
+
 <div class="">
   <h2>Current Focus: {{currentFocus.focus}}</h2>
 </div>
@@ -10,9 +19,8 @@ user number {{user.user_id}}
   <label for='focus'>What behavior will make you more money today?</label>
   <input type="text" class='form-control' ng-model="formModel.focus" id='focus'></input>
   <div class="form-group">
-    <button class="btn btn-primary" ng-click="submitFocus() ; showForm = !showForm ; $route.reload()">Set Focus</button>
+    <button class="btn btn-primary" ng-click="submitFocus() ; showForm = !showForm">Set Focus</button>
   </div>
-  <!-- <pre>{{formModel | json}}</pre> -->
 </div>
 
 
@@ -88,13 +96,13 @@ user number {{user.user_id}}
    >
 </label>
 <br>
-<label for="sales">Storm
+<label for="sales">Storm Multiline
    <input type="checkbox" ng-model="saleModel.stormMulti"
    ng-true-value="1" ng-false-value="0"
    >
 </label>
 <div class="form-group">
-  <button class="btn btn-primary" ng-click="submitSale() ; showSaleTab = !showSaleTab ; $route.reload()">Submit Sale</button>
+  <button class="btn btn-primary" ng-click="submitSale() ; showSaleTab = !showSaleTab ; $state.go('home')">Submit Sale</button>
 </div>
-<pre>{{saleModel | json}}</pre>
+<!-- <pre>{{saleModel | json}}</pre> -->
 </div>
