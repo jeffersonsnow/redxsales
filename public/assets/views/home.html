@@ -10,7 +10,7 @@ user number {{user.user_id}}
   <label for='focus'>What behavior will make you more money today?</label>
   <input type="text" class='form-control' ng-model="formModel.focus" id='focus'></input>
   <div class="form-group">
-    <button class="btn btn-primary" ng-click="submitFocus() ; showForm = !showForm ; location.reload()">Set Focus</button>
+    <button class="btn btn-primary" ng-click="submitFocus() ; showForm = !showForm ; $route.reload()">Set Focus</button>
   </div>
   <!-- <pre>{{formModel | json}}</pre> -->
 </div>
@@ -29,7 +29,7 @@ user number {{user.user_id}}
 <br>
 <label for='sales'>Setup Fee Amount</label>
   <select ng-model="saleModel.setupfee">
-    <option value="0" selected>None</option>
+    <option value="0">None</option>
     <option value="49.99">49.99</option>
     <option value="74.99">74.99</option>
     <option value="99.99">99.99</option>
@@ -38,7 +38,7 @@ user number {{user.user_id}}
 <br>
 <label for='sales'>Payment Plan</label>
   <select ng-model="saleModel.plan">
-    <option value="monthly" selected>Monthly</option>
+    <option value="monthly">Monthly</option>
     <option value="quarterly">Quarterly</option>
     <option value="semi-annual">Semi-Annual</option>
     <option value="annual">Annual</option>
@@ -94,7 +94,7 @@ user number {{user.user_id}}
    >
 </label>
 <div class="form-group">
-  <button class="btn btn-primary" ng-click="submitSale() ; showSaleTab = !showSaleTab">Submit Sale</button>
+  <button class="btn btn-primary" ng-click="submitSale() ; showSaleTab = !showSaleTab ; $route.reload()">Submit Sale</button>
 </div>
 <pre>{{saleModel | json}}</pre>
 </div>

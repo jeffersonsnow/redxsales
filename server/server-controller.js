@@ -14,18 +14,21 @@ module.exports = {
 },
 
   getCurrentFocus: function(req, res, next){
-      db.get_current([], function(err, response){
+      if(req.params.id){
+      db.get_current([req.params.id], function(err, response){
         if(err){
           console.log('error, dude!', err);
           res.json(err);
         } else {
-          console.log('Did it work?');
+          console.log('Did you get current focus?');
           res.json(response);
         }
       });
+    }
 },
   getAllFocuses: function(req, res, next){
     if(req.params.id){
+      console.log('step in');
     db.get_all_focuses([req.params.id], function(err, response){
       if(err){
         console.log('Game over, man!');

@@ -8,12 +8,10 @@ angular.module('app',['ui.router'])
       resolve: {
         check: function(loginService, $state){
           return loginService.checkAuthentication().then(function(response){
-              console.log(response);
             if(response === "Unauthorized"){
               $state.go('login');
               alert("Please login first.");
             } else {
-              console.log("Also this");
               return response.data;
             }
           });
@@ -32,12 +30,10 @@ angular.module('app',['ui.router'])
       resolve: {
         check: function(loginService, $state){
           return loginService.checkAuthentication().then(function(response){
-              console.log(response);
             if(response === "Unauthorized"){
               $state.go('login');
               alert("Please login first.");
             } else {
-              console.log("Also this");
               return response.data;
             }
           });

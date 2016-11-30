@@ -8,10 +8,11 @@ angular.module('app').service('mainService', function($http){
 //   });
 // };
 
-  this.getCurrentFocus = function(){
+  this.getCurrentFocus = function(id){
+    console.log("id in mainService", id);
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/api/dailyfocus'
+      url: 'http://localhost:3000/api/dailyfocus/' + id
     }).then(function(response){
       if(response.status === 200){
         return response.data;

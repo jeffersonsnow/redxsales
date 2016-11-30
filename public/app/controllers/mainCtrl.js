@@ -29,14 +29,22 @@ angular.module('app').controller('mainCtrl', function($scope, mainService, $http
     });
   };
 
-  $scope.getCurrentFocus = mainService.getCurrentFocus().then(function(currentFocus){
-    $scope.currentFocus = currentFocus[0];
-    console.log(currentFocus);
-  });
+  // $scope.getCurrentFocus =
+  // mainService.getCurrentFocus($scope.user.user_id).then(function(currentFocus){
+  //   $scope.currentFocus = currentFocus[0];
+  //   console.log(currentFocus);
+  // });
+
+
+
   $scope.showForm = false;
   $scope.showSaleTab = false;
   $scope.getUser = mainService.getUser().then(function(user){
     $scope.user = user;
+    mainService.getCurrentFocus($scope.user.user_id).then(function(currentFocus){
+      $scope.currentFocus = currentFocus[0];
+      console.log(currentFocus);
+    });
     // mainService.user.name = user.name;
   });
 
