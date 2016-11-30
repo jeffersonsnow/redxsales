@@ -1,5 +1,5 @@
 angular.module('app').service('mainService', function($http){
-//   this.submitFocus = function() {
+//   this.submitFocus = function(formModel) {
 //   return $http({
 //     method: 'POST',
 //     url: 'http://localhost:3000/dailyfocus',
@@ -25,7 +25,6 @@ angular.module('app').service('mainService', function($http){
       url: 'http://localhost:3000/me'
     }).then(function(response){
       if(response.status === 200){
-        console.log('this is the user', response.data);
         return response.data;
       }
     });

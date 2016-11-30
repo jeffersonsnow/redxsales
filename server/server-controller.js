@@ -3,7 +3,7 @@ var db = app.get('db');
 module.exports = {
 
   createFocus: function(req, res, next){
-        db.create_focus([req.body.focus, req.body.time], function(err, response){
+        db.create_focus([req.body.focus, req.body.time, req.body.user_id], function(err, response){
           if(err){
             res.json(err);
           }
@@ -25,7 +25,8 @@ module.exports = {
       });
 },
   getAllFocuses: function(req, res, next){
-    db.get_all([], function(err, response){
+    if(req.params.id){
+    db.get_all_focuses([req.params.id], function(err, response){
       if(err){
         console.log('Game over, man!');
         res.json(err);
@@ -34,6 +35,7 @@ module.exports = {
         res.json(response);
       }
     });
+    }
   },
 
   checkAuth: function(req, res, next){
@@ -50,7 +52,7 @@ module.exports = {
     var body = req.body;
     db.post_sale([body.rep, body.time, body.name, body.amount, body.setupfee,
       body.expireds, body.fsbos, body.frbos, body.preforeclosures, body.onyx, body.storm,
-      body.geo, body.stormMulti], function(err, response){
+      body.geo, body.stormMulti, body.user_id], function(err, response){
         if(err){
           console.log("error, dude!", err);
           res.json(err);

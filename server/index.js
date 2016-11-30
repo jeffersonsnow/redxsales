@@ -93,7 +93,7 @@ app.get('/auth/google/callback',
 app.post('/api/dailyfocus', controller.createFocus);
 app.post('/api/sales', controller.postSale);
 app.get('/api/dailyfocus', controller.getCurrentFocus);
-app.get('/api/allfocuses', controller.getAllFocuses);
+app.get('/api/allfocuses/:id', controller.getAllFocuses);
 app.get('/api/authentication', controller.checkAuth);
 
 
