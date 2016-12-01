@@ -10,9 +10,9 @@ var gulp = require('gulp'),
 
 var paths = {
   scssSource: './public/assets/styles/**/*.scss',
-  scssDist:'./dist/public',
+  scssDist:'./public/assets/styles',
   jsSource: './public/app/**/*.js',
-  jsDist: './dist/pubic'
+  jsDist: './dist/public'
 };
 
 gulp.task('compileJS', function(){

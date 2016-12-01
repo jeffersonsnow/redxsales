@@ -39,7 +39,7 @@ angular.module('app').service('mainService', function($http){
   this.salesToday = function(){
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/api/dailysales/' 
+      url: 'http://localhost:3000/api/dailysales/'
     }).then(function(response){
       console.log(response);
       if(response.status === 200){
@@ -48,5 +48,21 @@ angular.module('app').service('mainService', function($http){
       }
     });
   };
+
+  this.getAllUsers = function(){
+    return $http({
+      method: 'GET',
+      url: 'http://localhost:3000/api/allusers/'
+    }).then(function(response){
+      if(response.status === 200){
+      return response.data;
+      }
+    });
+  };
+
+  // this.getAllUsers = () => {
+  //   return http.get("/api/allusers/").then(result => result);
+  // };
+
 
 });

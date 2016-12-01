@@ -44,7 +44,19 @@ angular.module('app',['ui.router', 'ngGrid'])
     .state('commissions',{
       url: '/commissions',
       templateUrl: './assets/views/commissions.html',
-      controller: 'commissionCtrl'
+      controller: 'commissionCtrl',
+      resolve: {
+        check: function(loginService, $state){
+          return loginService.checkAuthentication().then(function(response){
+            if(response === "Unauthorized"){
+              $state.go('login');
+              alert("Please login first.");
+            } else {
+              return response.data;
+            }
+          });
+        }
+      }
     })
     // .state('details',{
     //   url:'/details/:id',

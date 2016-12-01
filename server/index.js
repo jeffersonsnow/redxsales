@@ -45,12 +45,13 @@ passport.use(new GoogleStrategy({
         });
       } else {
         console.log("Existing user found.");
+        console.log(profile);
         return done(null, dbRes);
       }
     });
   }
 ));
-
+//https://console.developers.google.com/apis/credentials/oauthclient/681326544071-kt7hhnbmcln6ul29232etqcarpehh815.apps.googleusercontent.com?project=redx-sales
 app.get('/auth/google', passport.authenticate('google',{scope: ['https://www.googleapis.com/auth/plus.me', 'https://www.googleapis.com/auth/userinfo.email', 'https://www.googleapis.com/auth/userinfo.profile']}));
 app.get('/auth/google/callback',
   passport.authenticate('google', {
@@ -80,7 +81,6 @@ app.get('/auth/google/callback',
   });//gets data from session and preps for req.user
 
   app.get('/me', function(req, res){
-    console.log('check this out');
     res.send(req.user);
   });
 
@@ -97,7 +97,7 @@ app.get('/api/allfocuses/:id', controller.getAllFocuses);
 app.get('/api/authentication', controller.checkAuth);
 app.get('/api/weeklysales/:id', controller.getSalesForWeek);
 app.get('/api/dailysales/', controller.getDailySales);
-
+app.get('/api/allusers/', controller.getAllUsers);
 
 
 app.listen(3000, function(){

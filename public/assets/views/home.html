@@ -8,9 +8,20 @@ user number {{user.user_id}}
 
 <!-- <div class="gridStyle" ng-grid="gridOptions"></div> -->
 
-<div ng-repeat="sale in dailysales">
+<!-- <div ng-repeat="unique-user in users">
   {{sale.amount}}
+</div> -->
+
+<div ng-repeat="uniqueuser in users">
+    <h2>{{uniqueuser.name}}</h2>
+    <div ng-repeat="sale in dailysales | filter: {user_id : uniqueuser.user_id}">
+        {{sale.amount}}
+    </div>
 </div>
+
+<!-- <div ng-repeat="sale in dailysales">
+  {{sale.amount}}
+</div> -->
 
 <div class="">
   <h2>Current Focus: {{currentFocus.focus}}</h2>

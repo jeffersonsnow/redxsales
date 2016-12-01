@@ -1,0 +1,26 @@
+$redx: #CA1600;
+// body {
+//   background-color: $redx;
+// }
+.jumbotron {
+  text-align: center;
+}
+
+// url('/wp-content/themes/theredx/img/logo-icons-61-v2.svg') center no-repeat
+.product-icon {
+    background: url(theredx.com/wp-content/themes/theredx/img/logo-icons-61-v2.svg) center no-repeat;
+    width: 83px;
+    height: 90px;
+}
+
+.logo {
+  height: 100%;
+  width: auto;
+}
+
+
+li {
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+
+}

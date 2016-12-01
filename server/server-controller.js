@@ -91,6 +91,18 @@ module.exports = {
         res.json(response);
       }
     });
+  },
+
+  getAllUsers: function(req, res, next){
+    db.get_all_users([], function(err, response){
+      if(err){
+        console.log("failure on getting users");
+        res.json(err);
+      } else{
+        console.log("success on getting users?");
+        res.json(response);
+      }
+    });
   }
 
 

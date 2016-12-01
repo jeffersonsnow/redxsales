@@ -3,22 +3,53 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <meta name="viewport" content="width=device-width, intital-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.css">
+<link rel="stylesheet" href="./assets/styles/styles.css">
+<link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
   </head>
   <body ng-controller="mainCtrl">
-    <ul class="primary-nav">
-                    <li>
-                        <a ui-sref='home'>Home</a>
-                    </li>
-                    <li>
-                        <a ui-sref="dailyfocus">Daily Focus</a>
-                    </li>
-                    <li>
-                        <a ui-sref="commissions">Commissions</a>
-                    </li>
-                    <li>
-                        <a ui-sref="quota">Quota</a>
-                    </li>
-                </ul>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+
+        <!-- logo -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand">
+            <img class="logo" src="http://www.mikeferry.com/main/files/REDX_Logo_CLEAR_2x5_300dpi.png" alt="redx logo">
+          </a>
+        </div>
+        <!-- http://www.mikeferry.com/main/files/REDX_Logo_CLEAR_2x5_300dpi.png -->
+        <!-- http://media.merchantcircle.com/43766964/REDX%20logo_full.png -->
+        <!-- menu items -->
+        <div class="collapse navbar-collapse" id="mainNavBar">
+          <ul class="nav navbar-nav">
+                <li>
+                    <a ui-sref='home'>HOME</a>
+                </li>
+                  <li>
+                    <a ui-sref="dailyfocus">DAILY FOCUS</a>
+                  </li>
+                  <li>
+                    <a ui-sref="commissions">COMMISSIONS</a>
+                  </li>
+                  <li>
+                    <a ui-sref="quota">QUOTA</a>
+                  </li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+
+
     {{test}}
 
 
@@ -26,6 +57,7 @@
     <script src="http://code.jquery.com/jquery-3.1.1.js"
             integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
             crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.js"></script>
