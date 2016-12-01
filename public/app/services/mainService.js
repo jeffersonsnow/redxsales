@@ -36,5 +36,17 @@ angular.module('app').service('mainService', function($http){
 
   this.user = {};
 
+  this.salesToday = function(){
+    return $http({
+      method: 'GET',
+      url: 'http://localhost:3000/api/dailysales/' 
+    }).then(function(response){
+      console.log(response);
+      if(response.status === 200){
+        console.log(response);
+        return response.data;
+      }
+    });
+  };
 
 });

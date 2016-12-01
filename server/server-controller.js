@@ -52,7 +52,7 @@ module.exports = {
 
   postSale: function(req, res, next){
     var body = req.body;
-    db.post_sale([body.rep, body.time, body.name, body.amount, body.setupfee,
+    db.post_sale([body.rep, body.time, body.name, body.amount, body.setupfee, body.plan,
       body.expireds, body.fsbos, body.frbos, body.preforeclosures, body.onyx, body.storm,
       body.geo, body.stormMulti, body.user_id], function(err, response){
         if(err){
@@ -79,6 +79,20 @@ module.exports = {
       }
     });
     }
+  },
+
+  getDailySales: function(req, res, next){
+    db.get_daily_sales([],function(err, response){
+      if(err){
+        console.log('Failure on get daily sales');
+        res.json(err);
+      } else {
+        console.log('did we get daily sales?');
+        res.json(response);
+      }
+    });
   }
+
+
 
 };

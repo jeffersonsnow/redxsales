@@ -5,6 +5,7 @@ create table sales (
   customer_name text,
   amount numeric,
   setup_fee numeric,
+  plan text,
   expireds integer,
   fsbos integer,
   frbos integer,

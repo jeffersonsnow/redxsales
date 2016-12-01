@@ -8,7 +8,9 @@ user number {{user.user_id}}
 
 <!-- <div class="gridStyle" ng-grid="gridOptions"></div> -->
 
-
+<div ng-repeat="sale in dailysales">
+  {{sale.amount}}
+</div>
 
 <div class="">
   <h2>Current Focus: {{currentFocus.focus}}</h2>
@@ -50,6 +52,7 @@ user number {{user.user_id}}
     <option value="quarterly">Quarterly</option>
     <option value="semi-annual">Semi-Annual</option>
     <option value="annual">Annual</option>
+    <option value="annual">Flex-Billing</option>
   </select>
 <br>
 <label for='sales'>Services</label>
@@ -104,5 +107,5 @@ user number {{user.user_id}}
 <div class="form-group">
   <button class="btn btn-primary" ng-disabled="!saleModel.name || !saleModel.amount || !saleModel.setupfee || !saleModel.plan" ng-click="submitSale() ; showSaleTab = !showSaleTab ; $state.go('home')">Submit Sale</button>
 </div>
-<!-- <pre>{{saleModel | json}}</pre> -->
+<pre>{{saleModel | json}}</pre>
 </div>
