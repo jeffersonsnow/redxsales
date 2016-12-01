@@ -6,5 +6,12 @@
 <div ng-repeat="sale in sales | filter: salesFilter | orderBy: '-date_sold'">
   {{sale.customer_name}} {{sale.amount}} {{sale.date_sold | date:'short'}}
 </div>
-{{setupFeeTotal}}
-{{example}}
+Setup Fee Revenue = {{setupFeeTotal}}
+<br>
+Setup Fee Commissions = {{setupFeeCommission}}
+<br>
+Total Revenue = {{totalRevenue}}
+<br>
+Revenue Commission = {{revenueCommission}}
+<br>
+Total Commissions = {{totalCommissions}}

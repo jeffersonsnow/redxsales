@@ -19,7 +19,7 @@ user number {{user.user_id}}
   <label for='focus'>What behavior will make you more money today?</label>
   <input type="text" class='form-control' ng-model="formModel.focus" id='focus'></input>
   <div class="form-group">
-    <button class="btn btn-primary" ng-click="submitFocus() ; showForm = !showForm">Set Focus</button>
+    <button class="btn btn-primary" ng-disabled="!formModel.focus" ng-click="submitFocus() ; showForm = !showForm">Set Focus</button>
   </div>
 </div>
 
@@ -102,7 +102,7 @@ user number {{user.user_id}}
    >
 </label>
 <div class="form-group">
-  <button class="btn btn-primary" ng-click="submitSale() ; showSaleTab = !showSaleTab ; $state.go('home')">Submit Sale</button>
+  <button class="btn btn-primary" ng-disabled="!saleModel.name || !saleModel.amount || !saleModel.setupfee || !saleModel.plan" ng-click="submitSale() ; showSaleTab = !showSaleTab ; $state.go('home')">Submit Sale</button>
 </div>
 <!-- <pre>{{saleModel | json}}</pre> -->
 </div>
