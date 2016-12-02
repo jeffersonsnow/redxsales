@@ -22,5 +22,14 @@ $redx: #CA1600;
 li {
   font-family: 'Oswald', sans-serif;
   font-weight: bold;
-
+}
+.grid {
+  height: auto !important;
+  width: 80vw;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: $redx;
+  font-family: 'Oswald', sans-serif;
+  padding: 10px;
+  // display: flex;
 }

@@ -12,12 +12,16 @@ user number {{user.user_id}}
   {{sale.amount}}
 </div> -->
 
+
+
+
 <div ng-repeat="uniqueuser in users">
-    <h2>{{uniqueuser.name}}</h2>
+    {{uniqueuser.name}}
     <div ng-repeat="sale in dailysales | filter: {user_id : uniqueuser.user_id}">
         {{sale.amount}}
     </div>
 </div>
+
 
 <!-- <div ng-repeat="sale in dailysales">
   {{sale.amount}}

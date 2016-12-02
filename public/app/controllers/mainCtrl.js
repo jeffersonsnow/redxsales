@@ -51,12 +51,18 @@ angular.module('app').controller('mainCtrl', function($scope, mainService, $http
 
   mainService.getAllUsers().then(function(users){
     $scope.users = users;
+
+
   });
 
   mainService.salesToday().then(function(dailysales){
     $scope.dailysales = dailysales;
     console.log($scope.dailysales);
+    // $scope.gridOpts = {
+    //   data: 'dailysales'
+    // };
   });
+
 
 
 });
