@@ -4,11 +4,9 @@
 <br>
 Current quota: ${{quota.quota_amount}}
 
-<div ng-repeat="user in users">
-  Sales Rep: {{user.name}}
-</div>
+<br>
 
-
+Monthly Team Total: ${{monthlyTeamTotal}}
 <div>
   <button ng-click="showQuotaTab = !showQuotaTab">Set Quota</button>
 </div>
@@ -19,4 +17,23 @@ Current quota: ${{quota.quota_amount}}
       <button class="btn btn-primary" ng-disabled="!quotaModel.quota_amount" ng-click="submitQuota() ; showQuotaTab = !showQuotaTab">Submit New Quota</button>
     </div>
     <pre>{{quotaModel | json}}</pre>
+</div>
+
+
+<div ng-repeat="user in users" class="container">
+  Sales Rep: {{user.name}}
+  <div ng-repeat="array in salesByReps | filter: {id : user.user_id}">
+    <div class="container">
+      <progress value="{{array.total}}" max="{{quota.quota_amount}}">0%</progress>
+
+    <!-- <div class="progress">
+      <div class="progress-bar" role="progressbar"
+      value="0" max="{{quota.quota_amount}}" style="width:300px"> -->
+        <!-- {{quotaPercent}}% -->
+        <br>
+        <p>${{array.total}} / ${{quota.quota_amount}}</p>
+      </div>
+    </div>
+    </div>
+</div>
 </div>

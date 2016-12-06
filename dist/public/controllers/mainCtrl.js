@@ -78,6 +78,7 @@ angular.module('app').controller('mainCtrl', ["$scope", "mainService", "$http", 
       $scope.salesByReps[_i2].total = $scope.salesByReps[_i2].sales.reduce(function (a, b) {
         return Number(a) + Number(b);
       }, 0);
+      $scope.salesByReps[_i2].total = $scope.salesByReps[_i2].total.toFixed(2);
     }
 
     // for (let i = 0; i < dailysales.length; i++) {

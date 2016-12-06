@@ -8,4 +8,17 @@ angular.module('app').service('adminService', function($http){
        });
       };
 
+  this.getSalesThisMonth = function(){
+    return $http({
+      method: 'GET',
+      url: 'http://localhost:3000/api/allmonthlysales'
+    }).then(function(response){
+      console.log(response);
+      if(response.status === 200){
+        return response.data;
+      }
+    });
+  };
+
+
 });

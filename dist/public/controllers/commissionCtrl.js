@@ -2,6 +2,8 @@
 
 angular.module('app').controller('commissionCtrl', ["$scope", "mainService", "commissionService", function ($scope, mainService, commissionService) {
   $scope.testing = "Comms page connected to controller";
+  $scope.weeklyDollarPerSale = 0;
+  $scope.totalSales = 0;
   $scope.setupFeeTotal = 0;
   $scope.totalRevenue = 0;
   $scope.revenueCommission = 0;
@@ -16,6 +18,7 @@ angular.module('app').controller('commissionCtrl', ["$scope", "mainService", "co
       for (var i = 0; i < $scope.sales.length; i++) {
         $scope.setupFeeTotal += Number($scope.sales[i].setup_fee);
         $scope.totalRevenue += Number($scope.sales[i].amount);
+        $scope.totalSales++;
       }
       $scope.setupFeeTotal = $scope.setupFeeTotal.toFixed(2);
       $scope.totalRevenue = $scope.totalRevenue.toFixed(2);
@@ -55,11 +58,13 @@ angular.module('app').controller('commissionCtrl', ["$scope", "mainService", "co
         $scope.revenueCommission = ($scope.adjustedRevenue * 0.12).toFixed(2);
       }
       if ($scope.totalRevenue >= 8000) {
-        $scope.commissionPercentage += 1;
+        $scope.commissionPercentage += 3;
         $scope.revenueCommission = ($scope.adjustedRevenue * 0.15).toFixed(2);
       }
       $scope.totalCommissions = (Number($scope.revenueCommission) + Number($scope.setupFeeCommission)).toFixed(2);
       console.log($scope.sales);
+      $scope.weeklyDollarPerSale = Number($scope.totalRevenue) / Number($scope.totalSales);
+      $scope.weeklyDollarPerSale = $scope.weeklyDollarPerSale.toFixed(2);
     });
   });
 

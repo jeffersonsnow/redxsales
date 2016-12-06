@@ -1,11 +1,11 @@
 <div class="">
-  <h1>Here are the past daily focuses.</h1>
-  {{test}}
+  <h1>Here are the past daily focuses for the month.</h1>
+
 </div>
 
   <div class="grid container" ng-grid="gridOpts"></div>
 
-<div dailyfocus-directive ng-repeat="focus in focuses | filter: focusFilter | orderBy: '-focus_date'" >
+<!-- <div dailyfocus-directive ng-repeat="focus in focuses | filter: focusFilter | orderBy: '-focus_date'" >
   <h2>Focus:</h2>
   "{{focus.focus}}" set on {{focus.focus_date | date:'short'}}
-</div>
+</div> -->

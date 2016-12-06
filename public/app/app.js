@@ -61,7 +61,19 @@ angular.module('app',['ui.router', 'ngGrid'])
     .state('quota',{
       url:'/quota',
       templateUrl: '/assets/views/quota.html',
-      controller: 'quotaCtrl'
+      controller: 'quotaCtrl',
+      resolve: {
+        check: function(loginService, $state){
+          return loginService.checkAuthentication().then(function(response){
+            if(response === "Unauthorized"){
+              $state.go('login');
+              alert("Please login first.");
+            } else {
+              return response.data;
+            }
+          });
+        }
+      }
     })
     .state('admin', {
       url:'/admin',
