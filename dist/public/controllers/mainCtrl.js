@@ -79,6 +79,9 @@ angular.module('app').controller('mainCtrl', ["$scope", "mainService", "$http", 
         return Number(a) + Number(b);
       }, 0);
       $scope.salesByReps[_i2].total = $scope.salesByReps[_i2].total.toFixed(2);
+      $scope.salesByReps[_i2].totalSales = $scope.salesByReps[_i2].sales.length;
+      $scope.salesByReps[_i2].personalDollarPerSale = $scope.salesByReps[_i2].total / $scope.salesByReps[_i2].totalSales++;
+      $scope.salesByReps[_i2].personalDollarPerSale = $scope.salesByReps[_i2].personalDollarPerSale.toFixed(2);
     }
 
     // for (let i = 0; i < dailysales.length; i++) {

@@ -9,6 +9,7 @@ angular.module('app').controller('mainCtrl', function($scope, mainService, $http
 
 
 
+
   $scope.submitFocus = function(){
           $scope.formModel.time = new Date();
           $scope.formModel.user_id = $scope.user.user_id;
@@ -81,6 +82,9 @@ angular.module('app').controller('mainCtrl', function($scope, mainService, $http
     for(let i = 0; i < $scope.salesByReps.length; i++){
       $scope.salesByReps[i].total = $scope.salesByReps[i].sales.reduce((a, b) => Number(a) + Number(b), 0);
       $scope.salesByReps[i].total = ($scope.salesByReps[i].total).toFixed(2);
+      $scope.salesByReps[i].totalSales = $scope.salesByReps[i].sales.length;
+      $scope.salesByReps[i].personalDollarPerSale = $scope.salesByReps[i].total / $scope.salesByReps[i].totalSales++;
+      $scope.salesByReps[i].personalDollarPerSale = ($scope.salesByReps[i].personalDollarPerSale).toFixed(2);
     }
 
     // for (let i = 0; i < dailysales.length; i++) {

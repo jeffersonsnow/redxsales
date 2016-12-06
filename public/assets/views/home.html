@@ -23,6 +23,8 @@ user number {{user.user_id}}
         </div>
         <div ng-repeat="array in salesByReps | filter: {id : uniqueuser.user_id}">
           Total: {{array.total}}
+          <br>
+          Dollar / Sale: {{array.personalDollarPerSale}}
     </div>
 </div>
 </div>
