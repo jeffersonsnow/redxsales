@@ -1,3 +1,46 @@
+.jumbotron {
+  text-align: center; }
+
+.product-icon {
+  background: url(theredx.com/wp-content/themes/theredx/img/logo-icons-61-v2.svg) center no-repeat;
+  width: 83px;
+  height: 90px; }
+
+.logo {
+  height: 100%;
+  width: auto; }
+
+li {
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold; }
+
+.grid {
+  height: auto !important;
+  width: 80vw;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #CA1600;
+  font-family: 'Oswald', sans-serif;
+  padding: 10px;
+  overflow-x: hidden;
+  overflow-y: hidden; }
+
+.dailysalesdoc {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center; }
+
+.dailybox {
+  border: 3px solid #CA1600;
+  border-radius: 10px;
+  min-width: 15vw; }
+
+.quotaprogress {
+  height: 10px;
+  width: 80vw; }
 
 .jumbotron {
   text-align: center; }
@@ -22,4 +65,23 @@ li {
   border-radius: 10px;
   background-color: #CA1600;
   font-family: 'Oswald', sans-serif;
-  padding: 10px; }
+  padding: 10px;
+  overflow-x: hidden;
+  overflow-y: hidden; }
+
+.dailysalesdoc {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center; }
+
+.dailybox {
+  border: 3px solid #CA1600;
+  border-radius: 10px;
+  min-width: 15vw; }
+
+.quotaprogress {
+  height: 10px;
+  width: 80vw; }

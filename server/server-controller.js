@@ -103,8 +103,43 @@ module.exports = {
         res.json(response);
       }
     });
+  },
+  getQuota: function(req, res, next){
+    db.get_quota([], function(err, response){
+      if(err){
+        console.log('failure on getting quota');
+        res.json(err);
+      }else{
+        console.log('Success on getting quota?');
+        res.json(response);
+      }
+    });
+  },
+  getMonthlyTotal: function(req, res, next){
+    if(req.params.id){
+    db.get_monthly_total([req.params.id], function(err, response){
+      if(err){
+      console.log('failure on getting monthly total');
+      return next(err);
+    }else{
+      console.log('Success on getting quota?');
+      res.json(response);
+    }
+  });
   }
+},
 
+createQuota: function(req, res, next){
+  db.create_quota([req.body.quota_amount, req.body.quota_time], function(err, response){
+    if(err){
+      console.log('failed to post quota');
+      return next(err);
+    }else{
+      console.log('Success on posting quota?');
+      res.json(response);
+    }
+  });
+}
 
 
 };

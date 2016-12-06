@@ -92,13 +92,15 @@ app.get('/auth/google/callback',
 
 app.post('/api/dailyfocus', controller.createFocus);
 app.post('/api/sales', controller.postSale);
+app.post('/api/quota', controller.createQuota);
 app.get('/api/dailyfocus/:id', controller.getCurrentFocus);
 app.get('/api/allfocuses/:id', controller.getAllFocuses);
 app.get('/api/authentication', controller.checkAuth);
 app.get('/api/weeklysales/:id', controller.getSalesForWeek);
 app.get('/api/dailysales/', controller.getDailySales);
 app.get('/api/allusers/', controller.getAllUsers);
-
+app.get('/api/monthlyquota', controller.getQuota);
+app.get('/api/monthlytotal/:id', controller.getMonthlyTotal);
 
 app.listen(3000, function(){
   console.log('Listening on port 3000');

@@ -1,0 +1,22 @@
+<h1>This is the admin page</h1>
+
+{{admintest}}
+<br>
+Current quota: ${{quota.quota_amount}}
+
+<div ng-repeat="user in users">
+  Sales Rep: {{user.name}}
+</div>
+
+
+<div>
+  <button ng-click="showQuotaTab = !showQuotaTab">Set Quota</button>
+</div>
+<div class"quota-submit" ng-show="showQuotaTab" >
+  <label for='sales'>Enter New Monthly Quota Mark</label>
+    <input ng-model="quotaModel.quota_amount"></input>
+    <div class="form-group">
+      <button class="btn btn-primary" ng-disabled="!quotaModel.quota_amount" ng-click="submitQuota() ; showQuotaTab = !showQuotaTab">Submit New Quota</button>
+    </div>
+    <pre>{{quotaModel | json}}</pre>
+</div>

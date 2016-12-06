@@ -24,6 +24,19 @@ create table dailyfocus (
   user_id integer references users(user_id)
 );
 
+create table monthlyquota (
+  quota_id serial primary key not null,
+  quota_amount numeric,
+  quota_time timestamp with time zone
+);
+
+
+
+  insert into monthlyquota (quota_amount, quota_time)
+  values (27352, current_timestamp)
+
+  ;
+
 
 
 SELECT * FROM sales

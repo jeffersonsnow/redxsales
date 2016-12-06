@@ -3,9 +3,9 @@
 <br>
 {{user.name}}
 
-<div ng-repeat="sale in sales | filter: salesFilter | orderBy: '-date_sold'">
+<!-- <div ng-repeat="sale in sales | filter: salesFilter | orderBy: '-date_sold'">
   {{sale.customer_name}} {{sale.amount}} {{sale.date_sold | date:'short'}}
-</div>
+</div> -->
 Setup Fee Revenue = {{setupFeeTotal}}
 <br>
 Setup Fee Commissions = {{setupFeeCommission}}
@@ -15,6 +15,8 @@ Total Revenue = {{totalRevenue}}
 Revenue Commission = {{revenueCommission}}
 <br>
 Total Commissions = {{totalCommissions}}
+<br>
+You're at {{commissionPercentage}}% for the week!
 
 <div class="wrapper">
   <div class="grid container" ng-grid="gridOpts"></div>

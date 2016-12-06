@@ -6,26 +6,32 @@ user number {{user.user_id}}
 </div>
 
 
-<!-- <div class="gridStyle" ng-grid="gridOptions"></div> -->
+<!-- <div class="grid container" ng-grid="gridOpts"></div> -->
 
-<!-- <div ng-repeat="unique-user in users">
-  {{sale.amount}}
+
+<!-- <div ng-repeat="uniqueuser in users">
+  {{uniqueuser.name}}
+  <div class="grid container" ng-grid="gridOpts"></div>
 </div> -->
 
 
-
-
-<div ng-repeat="uniqueuser in users">
+<div class="dailysalesdoc">
+<div class="dailybox" ng-repeat="uniqueuser in users">
     {{uniqueuser.name}}
     <div ng-repeat="sale in dailysales | filter: {user_id : uniqueuser.user_id}">
         {{sale.amount}}
+        </div>
+        <div ng-repeat="array in salesByReps | filter: {id : uniqueuser.user_id}">
+          Total: {{array.total}}
     </div>
 </div>
+</div>
+Daily Team Total: {{dailyRevenue}}
+<br>
+Total Daily Sales: {{totalDailySales}}
+<br>
+Dollar Per Sale: {{dollarPerSale}}
 
-
-<!-- <div ng-repeat="sale in dailysales">
-  {{sale.amount}}
-</div> -->
 
 <div class="">
   <h2>Current Focus: {{currentFocus.focus}}</h2>

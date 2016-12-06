@@ -1,0 +1,14 @@
+<h1>THIS IS THE QUOTA PAGE!</h1>
+{{quotatest}}
+
+
+
+<div class="container">
+<div class="progress">
+  <div class="progress-bar" role="progressbar"
+  aria-valuemin="0" aria-valuemax="{{quota.quota_amount}}" style="width:{{quotaPercent}}%">
+    {{quotaPercent}}%
+  </div>
+</div>
+${{monthlyTotal}} / ${{quota.quota_amount}}
+</div>

@@ -1,7 +1,5 @@
 $redx: #CA1600;
-// body {
-//   background-color: $redx;
-// }
+
 .jumbotron {
   text-align: center;
 }
@@ -31,5 +29,30 @@ li {
   background-color: $redx;
   font-family: 'Oswald', sans-serif;
   padding: 10px;
+  overflow-x: hidden;
+  overflow-y: hidden;
   // display: flex;
+}
+
+.dailysalesdoc{
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;;
+  align-items: stretch;
+  justify-content: center;
+
+}
+
+.dailybox {
+  border: 3px solid $redx;
+  border-radius: 10px;
+  min-width: 15vw;
+}
+
+.quotaprogress {
+  height: 10px;
+  width: 80vw;
+  // border: 1px solid white;
+  // color: $redx;
 }

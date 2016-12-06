@@ -58,12 +58,16 @@ angular.module('app',['ui.router', 'ngGrid'])
         }
       }
     })
-    // .state('details',{
-    //   url:'/details/:id',
-    //   templateUrl: '/views/product-details.html',
-    //   controller: 'mainCtrl'
-    // })
-
+    .state('quota',{
+      url:'/quota',
+      templateUrl: '/assets/views/quota.html',
+      controller: 'quotaCtrl'
+    })
+    .state('admin', {
+      url:'/admin',
+      templateUrl: '/assets/views/admin.html',
+      controller: 'adminCtrl'
+    })
     ;
   $urlRouterProvider
     .otherwise('/');

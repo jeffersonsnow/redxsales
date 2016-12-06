@@ -1,5 +1,9 @@
-angular.module('app').controller('dailyFocusCtrl', function($scope, dailyFocusService, mainService){
+angular.module('app').controller('dailyFocusCtrl', function($scope, dailyFocusService, commissionService, mainService){
   $scope.test = "This must be working!";
+  // $scope.currentPage = 0;
+  // $scope.pageSize = 5;
+  // $scope.focusdata = [];
+
   mainService.getUser().then(function(user){
     $scope.user = user;
     $scope.id = user.user_id;
@@ -10,6 +14,15 @@ angular.module('app').controller('dailyFocusCtrl', function($scope, dailyFocusSe
     // mainService.user.name = user.name;
   });
 
+  $scope.gridOpts = {
+    data: 'focuses',
+    resizable: 'true',
+    columnDefs: [
+    {field: 'focus', displayName: 'Focus'},
+    {field: 'focus_date | date:"short"', displayName: 'Date'}
+  ],
+  plugins: [new commissionService.ngGridFlexibleHeightPlugin()]
+  };
 
 
 });
