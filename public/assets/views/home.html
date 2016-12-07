@@ -1,5 +1,5 @@
-<h1>Welcome to the the Home Page, {{user.name}}!</h1>
-user number {{user.user_id}}
+<!-- <h1>Welcome to the the Home Page, {{user.name}}!</h1> -->
+
 
 <div class="Sales Table">
 
@@ -15,24 +15,45 @@ user number {{user.user_id}}
 </div> -->
 
 
-<div class="dailysalesdoc">
-<div class="dailybox" ng-repeat="uniqueuser in users">
+<div class="dailysalesdoc container-fluid">
+
+<div class="dailybox card" ng-repeat="uniqueuser in users">
+  <div class="saleboxheader">
+  <div class="chip">
+    <img src="{{uniqueuser.photo}}" alt="user photo">
     {{uniqueuser.name}}
-    <div ng-repeat="sale in dailysales | filter: {user_id : uniqueuser.user_id}">
-        {{sale.amount}}
+  </div>
+  </div>
+<div class="salesdivider"></div>
+  <div class="thepadder">
+    <div class="well well-sm" ng-repeat="sale in dailysales | filter: {user_id : uniqueuser.user_id}">
+        <div class="saletag"></div>{{sale.amount}}
         </div>
-        <div ng-repeat="array in salesByReps | filter: {id : uniqueuser.user_id}">
+        <div class="well well-sm" ng-repeat="array in salesByReps | filter: {id : uniqueuser.user_id}">
           Total: {{array.total}}
           <br>
           Dollar / Sale: {{array.personalDollarPerSale}}
     </div>
+    </div>
 </div>
+
 </div>
-Daily Team Total: {{dailyRevenue}}
-<br>
-Total Daily Sales: {{totalDailySales}}
-<br>
-Dollar Per Sale: {{dollarPerSale}}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+  Daily Team Total: {{dailyRevenue}}
+    <br>
+
+  Total Daily Sales: {{totalDailySales}}
+  <br>
+  Dollar Per Sale: {{dollarPerSale}}
+  </div>
+  </div>
+  </div>
+
+</div>
+
 
 
 <div class="">
@@ -130,5 +151,5 @@ Dollar Per Sale: {{dollarPerSale}}
 <div class="form-group">
   <button class="btn btn-primary" ng-disabled="!saleModel.name || !saleModel.amount || !saleModel.setupfee || !saleModel.plan" ng-click="submitSale() ; showSaleTab = !showSaleTab ; $state.go('home')">Submit Sale</button>
 </div>
-<pre>{{saleModel | json}}</pre>
+
 </div>

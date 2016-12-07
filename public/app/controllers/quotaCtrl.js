@@ -12,6 +12,8 @@ angular.module('app').controller('quotaCtrl', function($scope, quotaService, mai
   $scope.onyxTotal = 0;
   $scope.geoTotal = 0;
   $scope.multilineTotal = 0;
+  $scope.totalProductCount = 0;
+  $scope.productsPerSale = 0;
 
   quotaService.getQuota().then((quota) => {
       $scope.quota = quota[0];
@@ -37,11 +39,13 @@ angular.module('app').controller('quotaCtrl', function($scope, quotaService, mai
            $scope.pfcsTotal += Number($scope.sales[i].preforeclosures);
            $scope.frbosTotal += Number($scope.sales[i].frbos);
            $scope.stormTotal += Number($scope.sales[i].storm);
+           $scope.onyxTotal += Number($scope.sales[i].onyx);
            $scope.geoTotal += Number($scope.sales[i].geoleads);
            $scope.multilineTotal += Number($scope.sales[i].multiline);
          }
           $scope.monthlyDollarPerSale = $scope.monthlyTotal / $scope.totalSales;
           $scope.monthlyDollarPerSale = ($scope.monthlyDollarPerSale).toFixed(2);
+          // $scope.totalProductCount
       });
     });
   });

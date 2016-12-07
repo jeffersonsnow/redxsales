@@ -1,6 +1,63 @@
-<h1>THIS IS THE QUOTA PAGE!</h1>
 
-Total Sales: {{totalSales}}
+
+<div class="container">
+<div class="row">
+  <div class="col-md-4"><h1>Product Totals</h1></div>
+  <div class="col-md-8"><h1>Quota Progress</h1></div>
+</div>
+  <div class="row">
+
+    <div class="col-md-2">
+    <div class="expireds">
+    </div>
+    Total Expireds: {{expiredsTotal}}
+
+    <div class="fsbos"></div>
+    Total FSBOs: {{fsbosTotal}}
+    <br>
+    <div class="pfcs"></div>
+    Total PFCs: {{pfcsTotal}}
+    <br>
+    <div class="frbos"></div>
+    Total FRBOs: {{frbosTotal}}</div>
+    <div class="col-md-2">
+        <div class="storm"></div>
+        Total Storm: {{stormTotal}}
+        <br>
+        <div class="onyx"></div>
+        Total Onyx: {{onyxTotal}}
+        <br>
+        <div class="geo"></div>
+        Total Geo Leads: {{geoTotal}}
+        <br>
+        <div class="storm"></div>
+        Total Multiline: {{multilineTotal}}
+    </div>
+    <div class="col-md-8">
+      <div class="progress">
+      <div class="progress-bar" role="progressbar"
+      aria-valuemin="0" aria-valuemax="{{quota.quota_amount}}" style="width:{{quotaPercent}}%">
+        {{quotaPercent}}%
+      </div>
+    </div>
+    <div class="review">
+      Monthly Revenue: ${{monthlyTotal}} / ${{quota.quota_amount}}
+      <br>
+      Sales This Month: {{totalSales}}
+      <br>
+      Dollar Per Sale For Month: {{monthlyDollarPerSale}}
+      <br>
+    </div>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- Total Sales: {{totalSales}}
 <br>
 Dollar Per Sale For Month: {{monthlyDollarPerSale}}
 <br>
@@ -37,4 +94,4 @@ Total Storm-Multi: {{multilineTotal}}
   </div>
 </div>
 ${{monthlyTotal}} / ${{quota.quota_amount}}
-</div>
+</div> -->
