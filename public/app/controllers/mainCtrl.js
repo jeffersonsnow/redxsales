@@ -10,6 +10,7 @@ angular.module('app').controller('mainCtrl', function($scope, mainService, $http
 
 
 
+
   $scope.submitFocus = function(){
           $scope.formModel.time = new Date();
           $scope.formModel.user_id = $scope.user.user_id;
@@ -29,7 +30,7 @@ angular.module('app').controller('mainCtrl', function($scope, mainService, $http
     $scope.saleModel.time = new Date();
       $scope.saleModel.rep = $scope.user.name;
         $scope.saleModel.user_id = $scope.user.user_id;
-          $state.reload();
+          // $state.reload();
             console.log($scope.saleModel);
               return $http({
                 method: 'POST',

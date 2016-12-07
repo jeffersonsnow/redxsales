@@ -47,7 +47,9 @@ angular.module('app').controller('quotaCtrl', ["$scope", "quotaService", "mainSe
         }
         $scope.monthlyDollarPerSale = $scope.monthlyTotal / $scope.totalSales;
         $scope.monthlyDollarPerSale = $scope.monthlyDollarPerSale.toFixed(2);
-        // $scope.totalProductCount
+        $scope.totalProductCount = Number($scope.expiredsTotal) + Number($scope.fsbosTotal) + Number($scope.pfcsTotal) + Number($scope.frbosTotal) + Number($scope.stormTotal) + Number($scope.onyxTotal) + Number($scope.geoTotal) + Number($scope.multilineTotal);
+        $scope.productsPerSale = Number($scope.totalProductCount) / Number($scope.totalSales);
+        $scope.productsPerSale = $scope.productsPerSale.toFixed(2);
       });
     });
   });

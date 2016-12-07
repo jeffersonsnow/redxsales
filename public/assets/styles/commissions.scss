@@ -1,4 +1,18 @@
 @import './home.scss';
-// body{
-//   background-color: $redx;
-// }
+.commissioncontainer{
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+}
+.grid {
+  height: auto !important;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: $redx;
+  font-family: 'Oswald', sans-serif;
+  padding: 10px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  // display: flex;
+}

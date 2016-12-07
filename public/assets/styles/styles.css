@@ -18,17 +18,6 @@ li {
   font-family: 'Oswald', sans-serif;
   font-weight: bold; }
 
-.grid {
-  height: auto !important;
-  width: 80vw;
-  border: 1px solid black;
-  border-radius: 10px;
-  background-color: #CA1600;
-  font-family: 'Oswald', sans-serif;
-  padding: 10px;
-  overflow-x: hidden;
-  overflow-y: hidden; }
-
 .dailysalesdoc {
   margin: auto;
   display: flex;
@@ -100,6 +89,36 @@ li {
 
 .well {
   border: 1px solid black; }
+
+.smallertext {
+  font-size: 10px; }
+
+.dailytotals {
+  margin-top: 10px;
+  background-color: #E5E5E0;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s; }
+
+.dailytotals:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
+
+.commissioncontainer {
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+  padding: 10px; }
+
+.grid {
+  height: auto !important;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #CA1600;
+  font-family: 'Oswald', sans-serif;
+  padding: 10px;
+  overflow-x: hidden;
+  overflow-y: hidden; }
 
 body {
   font-family: 'Oswald', sans-serif;
@@ -121,17 +140,6 @@ li {
   font-family: 'Oswald', sans-serif;
   font-weight: bold; }
 
-.grid {
-  height: auto !important;
-  width: 80vw;
-  border: 1px solid black;
-  border-radius: 10px;
-  background-color: #CA1600;
-  font-family: 'Oswald', sans-serif;
-  padding: 10px;
-  overflow-x: hidden;
-  overflow-y: hidden; }
-
 .dailysalesdoc {
   margin: auto;
   display: flex;
@@ -203,6 +211,20 @@ li {
 
 .well {
   border: 1px solid black; }
+
+.smallertext {
+  font-size: 10px; }
+
+.dailytotals {
+  margin-top: 10px;
+  background-color: #E5E5E0;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s; }
+
+.dailytotals:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
 
 body {
   font-family: 'Oswald', sans-serif;
@@ -224,17 +246,6 @@ li {
   font-family: 'Oswald', sans-serif;
   font-weight: bold; }
 
-.grid {
-  height: auto !important;
-  width: 80vw;
-  border: 1px solid black;
-  border-radius: 10px;
-  background-color: #CA1600;
-  font-family: 'Oswald', sans-serif;
-  padding: 10px;
-  overflow-x: hidden;
-  overflow-y: hidden; }
-
 .dailysalesdoc {
   margin: auto;
   display: flex;
@@ -306,6 +317,20 @@ li {
 
 .well {
   border: 1px solid black; }
+
+.smallertext {
+  font-size: 10px; }
+
+.dailytotals {
+  margin-top: 10px;
+  background-color: #E5E5E0;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s; }
+
+.dailytotals:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
 
 .expireds {
   height: 82.2px;

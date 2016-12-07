@@ -1,24 +1,40 @@
-<h1>Here is the commissions page!</h1>
-{{testing}}
-<br>
-{{user.name}}
-<br>
-Total Sales: {{totalSales}}
-<br>
-Weekly Dollar Per Sale: {{weeklyDollarPerSale}}
-<br>
-Setup Fee Revenue = {{setupFeeTotal}}
-<br>
-Setup Fee Commissions = {{setupFeeCommission}}
-<br>
-Total Revenue = {{totalRevenue}}
-<br>
-Revenue Commission = {{revenueCommission}}
-<br>
-Total Commissions = {{totalCommissions}}
-<br>
-You're at {{commissionPercentage}}% for the week!
+<div class="container">
+  <h1>Commissions</h1>
+</div>
 
-<div class="wrapper">
-  <div class="grid container" ng-grid="gridOpts"></div>
+<div class="container commissioncontainer">
+  <div class="row">
+
+<div class="col-md-3">
+
+
+  {{user.name}}
+  <br>
+  Total Sales: {{totalSales}}
+  <br>
+  Weekly Dollar Per Sale: {{weeklyDollarPerSale}}
+  <br>
+  Setup Fee Revenue = {{setupFeeTotal}}
+  <br>
+  Setup Fee Commissions = {{setupFeeCommission}}
+  <br>
+  Total Revenue = {{totalRevenue}}
+  <br>
+  Revenue Commission = {{revenueCommission}}
+  <br>
+  Total Commissions = {{totalCommissions}}
+  <br>
+  You're at {{commissionPercentage}}% for the week!
+  </div>
+    </div>
+</div>
+
+
+
+
+<div class="container">
+<div class="row">
+  <div class="grid" ng-grid="gridOpts"></div>
+</div>
+
 </div>

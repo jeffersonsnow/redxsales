@@ -1,20 +1,10 @@
-<!-- <h1>Welcome to the the Home Page, {{user.name}}!</h1> -->
+<div id="wrapper">
 
-
-<div class="Sales Table">
+<div id="sidebar-wrapper">
 
 </div>
 
-
-<!-- <div class="grid container" ng-grid="gridOpts"></div> -->
-
-
-<!-- <div ng-repeat="uniqueuser in users">
-  {{uniqueuser.name}}
-  <div class="grid container" ng-grid="gridOpts"></div>
-</div> -->
-
-
+<div id="page-content "class="container-fluid">
 <div class="dailysalesdoc container-fluid">
 
 <div class="dailybox card" ng-repeat="uniqueuser in users">
@@ -38,39 +28,144 @@
 </div>
 
 </div>
+<!-- this where the main container ends -->
+<!-- this is where the main containder was -->
+
+<div class="container-fluid">
+  <div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-7 focuspane">
+    <div class="">
+      <h2>Current Focus: {{currentFocus.focus}} <span class="smallertext">set on {{currentFocus.focus_date | date: "short"}}</span></h2>
+    </div>
+    <button ng-click="showForm = !showForm" type="button" name="button">Set New Focus</button>
+    <br>
+    <div ng-show="showForm" class="form-group">
+      <label for='focus'>What behavior will make you more money today?</label>
+      <input type="text" class='form-control' ng-model="formModel.focus" id='focus'></input>
+      <div class="form-group">
+        <button class="btn btn-primary" ng-disabled="!formModel.focus" ng-click="submitFocus() ; showForm = !showForm">Set Focus</button>
+      </div>
+    </div>
+
+  </div>
+    <div class="col-md-3 dailytotals">
+  <h2>Daily Team Total: {{dailyRevenue}}</h2>
+
+  <h2>Total Daily Sales: {{totalDailySales}}</h2>
+
+  <h2>Dollar Per Sale: {{dollarPerSale}}</h2>
+  </div>
+  <div class="col-md-1"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+      <h2>Enter New Sale</h2>
+      <div>
+        <button ng-click="showSaleTab = !showSaleTab">Sales Form</button>
+      </div>
+      <div class"sale-submit" ng-show="showSaleTab" >
+      <label for='sales'>Customer Name</label>
+        <input ng-model="saleModel.name"></input>
+      <br>
+      <label for='sales'>Sales Amount</label>
+        <input ng-model="saleModel.amount"></input>
+      <br>
+      <label for='sales'>Setup Fee Amount</label>
+        <select ng-model="saleModel.setupfee">
+          <option value="0">None</option>
+          <option value="49.99">49.99</option>
+          <option value="74.99">74.99</option>
+          <option value="99.99">99.99</option>
+          <option value="149.99">149.99</option>
+        </select>
+      <br>
+      <label for='sales'>Payment Plan</label>
+        <select ng-model="saleModel.plan">
+          <option value="monthly">Monthly</option>
+          <option value="quarterly">Quarterly</option>
+          <option value="semi-annual">Semi-Annual</option>
+          <option value="annual">Annual</option>
+          <option value="annual">Flex-Billing</option>
+        </select>
+      <br>
+      <label for='sales'>Services</label>
+      <br>
+      <label for="sales">Expireds
+         <input type="checkbox" ng-model="saleModel.expireds"
+         ng-true-value="1" ng-false-value="0"
+         >
+      </label>
+      <br>
+      <label for="sales">FSBOs
+         <input type="checkbox" ng-model="saleModel.fsbos"
+         ng-true-value="1" ng-false-value="0"
+         >
+      </label>
+      <br>
+      <label for="sales">FRBOs
+         <input type="checkbox" ng-model="saleModel.frbos"
+         ng-true-value="1" ng-false-value="0"
+         >
+      </label>
+      <br>
+      <label for="sales">Preforeclosures
+         <input type="checkbox" ng-model="saleModel.pfcs"
+         ng-true-value="1" ng-false-value="0"
+         >
+      </label>
+      <br>
+      <label for="sales">ONYX
+         <input type="checkbox" ng-model="saleModel.onyx"
+         ng-true-value="1" ng-false-value="0"
+         >
+      </label>
+      <br>
+      <label for="sales">Storm
+         <input type="checkbox" ng-model="saleModel.storm"
+         ng-true-value="1" ng-false-value="0"
+         >
+      </label>
+      <br>
+      <label for="sales">GeoLeads
+         <input type="checkbox" ng-model="saleModel.geo"
+         ng-true-value="1" ng-false-value="0"
+         >
+      </label>
+      <br>
+      <label for="sales">Storm Multiline
+         <input type="checkbox" ng-model="saleModel.stormMulti"
+         ng-true-value="1" ng-false-value="0"
+         >
+      </label>
+      <div class="form-group">
+        <button class="btn btn-primary" ng-disabled="!saleModel.name || !saleModel.amount || !saleModel.setupfee || !saleModel.plan" ng-click="submitSale() ; showSaleTab = !showSaleTab ; $state.go('home')">Submit Sale</button>
+      </div>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+
+
+
+
+</div>
+<!-- this is the end of page-content -->
+
+
+
+</div>
+<!-- wrapper ending -->
+
+
+
+<!--
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-2">
-  Daily Team Total: {{dailyRevenue}}
-    <br>
-
-  Total Daily Sales: {{totalDailySales}}
-  <br>
-  Dollar Per Sale: {{dollarPerSale}}
-  </div>
-  </div>
-  </div>
-
-</div>
-
-
-
-<div class="">
-  <h2>Current Focus: {{currentFocus.focus}}</h2>
-</div>
-<button ng-click="showForm = !showForm" type="button" name="button">Set New Focus</button>
-<br>
-<div ng-show="showForm" class="form-group">
-  <label for='focus'>What behavior will make you more money today?</label>
-  <input type="text" class='form-control' ng-model="formModel.focus" id='focus'></input>
-  <div class="form-group">
-    <button class="btn btn-primary" ng-disabled="!formModel.focus" ng-click="submitFocus() ; showForm = !showForm">Set Focus</button>
-  </div>
-</div>
-
-
-
 <div>
   <button ng-click="showSaleTab = !showSaleTab">Sales Form</button>
 </div>
@@ -153,3 +248,4 @@
 </div>
 
 </div>
+</div> -->
