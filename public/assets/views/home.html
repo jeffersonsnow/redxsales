@@ -1,10 +1,13 @@
 <div id="wrapper">
-
-<div id="sidebar-wrapper">
-
+<!-- <div class="container-fluid">
+  <h1>Daily Sales</h1>
+</div> -->
+<div class="dailysalesheader">
+  <h1>Daily Sales</h1>
 </div>
 
 <div id="page-content "class="container-fluid">
+
 <div class="dailysalesdoc container-fluid">
 
 <div class="dailybox card" ng-repeat="uniqueuser in users">
@@ -33,6 +36,19 @@
 
 <div class="container-fluid">
   <div class="row">
+    <div class="col-md-1">
+
+    </div>
+<div class="col-md-10 dailytotals">
+  <h2>Daily Team Total: {{dailyRevenue}}</h2>
+
+  <h2>Total Daily Sales: {{totalDailySales}}</h2>
+
+  <h2>Dollar Per Sale: {{dollarPerSale}}</h2>
+</div>
+
+  </div>
+  <div class="row">
   <div class="col-md-1"></div>
   <div class="col-md-7 focuspane">
     <div class="">
@@ -49,19 +65,15 @@
     </div>
 
   </div>
-    <div class="col-md-3 dailytotals">
-  <h2>Daily Team Total: {{dailyRevenue}}</h2>
+    <div class="col-md-3">
 
-  <h2>Total Daily Sales: {{totalDailySales}}</h2>
-
-  <h2>Dollar Per Sale: {{dollarPerSale}}</h2>
   </div>
   <div class="col-md-1"></div>
   </div>
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-4">
-      <h2>Enter New Sale</h2>
+      <!-- <h2>Enter New Sale</h2>
       <div>
         <button ng-click="showSaleTab = !showSaleTab">Sales Form</button>
       </div>
@@ -141,9 +153,10 @@
       </label>
       <div class="form-group">
         <button class="btn btn-primary" ng-disabled="!saleModel.name || !saleModel.amount || !saleModel.setupfee || !saleModel.plan" ng-click="submitSale() ; showSaleTab = !showSaleTab ; $state.go('home')">Submit Sale</button>
-      </div>
+      </div> -->
 
       </div>
+      <!-- here -->
     </div>
 
   </div>
@@ -156,10 +169,18 @@
 </div>
 <!-- this is the end of page-content -->
 
-
-
+<div>
+  <sales-form></sales-form>
+  <a data-toggle="modal" data-target="#salesform">
+  <button type="button" id="salebutton" class="btn btn-circle btn-success btn-lg pull-right">
+  <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+  </button>
+  </a>
+</div>
 </div>
 <!-- wrapper ending -->
+
+
 
 
 

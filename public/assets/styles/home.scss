@@ -33,13 +33,14 @@ li {
   flex-wrap: wrap;;
   align-items: stretch;
   justify-content: center;
-
 }
-// .card-pic{
-//   border-radius: 25px;
-//   height: 35px;
-//   border: 2px solid gray;
-// }
+
+.dailysalesheader {
+margin-top: 60px;
+margin-left: 80px;
+text-align: left;
+}
+
 .chip {
     display: inline-block;
     padding: 0 25px;
@@ -137,4 +138,18 @@ li {
 }
 .dailytotals:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+#salebutton {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  position: fixed;
+   bottom: 7vh;
+   right: 4vw;
+}
+#salebutton:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+#salebutton:focus{
+  outline: 0;
 }

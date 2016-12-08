@@ -3,7 +3,7 @@
 angular.module('app').controller('mainCtrl', ["$scope", "mainService", "$http", "$state", function ($scope, mainService, $http, $state) {
   $scope.test = 'angular is working';
   $scope.formModel = {};
-  $scope.saleModel = {};
+  // $scope.saleModel = {};
   $scope.dailyRevenue = 0;
   $scope.totalDailySales = 0;
   $scope.dollarPerSale = 0;
@@ -12,11 +12,10 @@ angular.module('app').controller('mainCtrl', ["$scope", "mainService", "$http", 
   $scope.submitFocus = function () {
     $scope.formModel.time = new Date();
     $scope.formModel.user_id = $scope.user.user_id;
+    swal("Focus Set!", "Go, Man. Go!", "success");
     $state.reload();
-    console.log('submitted!');
-    console.log($scope.formModel);
-    // $http.post("postgres://Snow@localhost/redxsalesteam")
-    // mainService.submitFocus($scope.formModel)
+    // $http.post("postgres://Snow@localhost/redxsalesteam");
+    // mainService.submitFocus($scope.formModel);
     return $http({
       method: 'POST',
       url: 'http://localhost:3000/api/dailyfocus',
@@ -24,27 +23,28 @@ angular.module('app').controller('mainCtrl', ["$scope", "mainService", "$http", 
     });
   };
 
-  $scope.submitSale = function () {
-    $scope.saleModel.time = new Date();
-    $scope.saleModel.rep = $scope.user.name;
-    $scope.saleModel.user_id = $scope.user.user_id;
-    // $state.reload();
-    console.log($scope.saleModel);
-    return $http({
-      method: 'POST',
-      url: 'http://localhost:3000/api/sales',
-      data: $scope.saleModel
-    });
-  };
+  // $scope.submitSale = function(){
+  //   $scope.saleModel.time = new Date();
+  //     $scope.saleModel.rep = $scope.user.name;
+  //       $scope.saleModel.user_id = $scope.user.user_id;
+  //       swal("Sale Logged!", "Keep on Keeping on!", "success");
+  //         $state.reload();
+  //           console.log($scope.saleModel);
+  //             return $http({
+  //               method: 'POST',
+  //               url: 'http://localhost:3000/api/sales',
+  //               data: $scope.saleModel
+  //             });
+  //         };
 
   // $scope.getCurrentFocus =
   // mainService.getCurrentFocus($scope.user.user_id).then(function(currentFocus){
   //   $scope.currentFocus = currentFocus[0];
   //   console.log(currentFocus);
   // });
-
+  //
   $scope.showForm = false;
-  $scope.showSaleTab = false;
+  // $scope.showSaleTab = false;
 
   $scope.getUser = mainService.getUser().then(function (user) {
     $scope.user = user;
@@ -106,10 +106,4 @@ angular.module('app').controller('mainCtrl', ["$scope", "mainService", "$http", 
     $scope.dollarPerSale = Number($scope.dailyRevenue) / Number($scope.totalDailySales);
     $scope.dollarPerSale = $scope.dollarPerSale.toFixed(2);
   });
-
-  $scope.gridOpts = {
-    data: 'dailysales',
-    resizable: 'true',
-    columnDefs: [{ field: 'amount', displayName: 'Sale' }]
-  };
 }]);

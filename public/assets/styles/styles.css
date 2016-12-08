@@ -26,6 +26,11 @@ li {
   align-items: stretch;
   justify-content: center; }
 
+.dailysalesheader {
+  margin-top: 60px;
+  margin-left: 80px;
+  text-align: left; }
+
 .chip {
   display: inline-block;
   padding: 0 25px;
@@ -103,6 +108,23 @@ li {
 
 .dailytotals:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
+
+#salebutton {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  position: fixed;
+  bottom: 7vh;
+  right: 4vw; }
+
+#salebutton:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
+
+#salebutton:focus {
+  outline: 0; }
+
+.commissionheader {
+  margin-top: 60px; }
 
 .commissioncontainer {
   background-color: black;
@@ -148,6 +170,11 @@ li {
   align-items: stretch;
   justify-content: center; }
 
+.dailysalesheader {
+  margin-top: 60px;
+  margin-left: 80px;
+  text-align: left; }
+
 .chip {
   display: inline-block;
   padding: 0 25px;
@@ -225,6 +252,20 @@ li {
 
 .dailytotals:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
+
+#salebutton {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  position: fixed;
+  bottom: 7vh;
+  right: 4vw; }
+
+#salebutton:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
+
+#salebutton:focus {
+  outline: 0; }
 
 body {
   font-family: 'Oswald', sans-serif;
@@ -254,6 +295,11 @@ li {
   align-items: stretch;
   justify-content: center; }
 
+.dailysalesheader {
+  margin-top: 60px;
+  margin-left: 80px;
+  text-align: left; }
+
 .chip {
   display: inline-block;
   padding: 0 25px;
@@ -331,6 +377,23 @@ li {
 
 .dailytotals:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
+
+#salebutton {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  position: fixed;
+  bottom: 7vh;
+  right: 4vw; }
+
+#salebutton:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
+
+#salebutton:focus {
+  outline: 0; }
+
+.quotaheader {
+  margin-top: 60px; }
 
 .expireds {
   height: 82.2px;

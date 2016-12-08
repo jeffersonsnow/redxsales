@@ -10,7 +10,8 @@ angular.module('app',['ui.router', 'ngGrid'])
           return loginService.checkAuthentication().then(function(response){
             if(response === "Unauthorized"){
               $state.go('login');
-              alert("Please login first.");
+              // alert("Please login first.");
+              sweetAlert("Oops...", "Please login first.", "error");
             } else {
               return response.data;
             }
@@ -32,7 +33,8 @@ angular.module('app',['ui.router', 'ngGrid'])
           return loginService.checkAuthentication().then(function(response){
             if(response === "Unauthorized"){
               $state.go('login');
-              alert("Please login first.");
+              // alert("Please login first.");
+              sweetAlert("Oops...", "Please login first.", "error");
             } else {
               return response.data;
             }
@@ -50,7 +52,8 @@ angular.module('app',['ui.router', 'ngGrid'])
           return loginService.checkAuthentication().then(function(response){
             if(response === "Unauthorized"){
               $state.go('login');
-              alert("Please login first.");
+              // alert("Please login first.");
+              sweetAlert("Oops...", "Please login first.", "error");
             } else {
               return response.data;
             }
@@ -67,7 +70,8 @@ angular.module('app',['ui.router', 'ngGrid'])
           return loginService.checkAuthentication().then(function(response){
             if(response === "Unauthorized"){
               $state.go('login');
-              alert("Please login first.");
+              // alert("Please login first.");
+              sweetAlert("Oops...", "Please login first.", "error");
             } else {
               return response.data;
             }

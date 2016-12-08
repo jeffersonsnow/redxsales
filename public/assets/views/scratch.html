@@ -1,0 +1,93 @@
+<div class="modal fade" id="salesform" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal">&time;</button>
+        <h4 class="modal-title">Sales Form</h4>
+      </div>
+      <div class="modal-body">
+        <div class"sale-submit" ng-show="showSaleTab" >
+        <label for='sales'>Customer Name</label>
+          <input ng-model="saleModel.name"></input>
+        <br>
+        <label for='sales'>Sales Amount</label>
+          <input ng-model="saleModel.amount"></input>
+        <br>
+        <label for='sales'>Setup Fee Amount</label>
+          <select ng-model="saleModel.setupfee">
+            <option value="0">None</option>
+            <option value="49.99">49.99</option>
+            <option value="74.99">74.99</option>
+            <option value="99.99">99.99</option>
+            <option value="149.99">149.99</option>
+          </select>
+        <br>
+        <label for='sales'>Payment Plan</label>
+          <select ng-model="saleModel.plan">
+            <option value="monthly">Monthly</option>
+            <option value="quarterly">Quarterly</option>
+            <option value="semi-annual">Semi-Annual</option>
+            <option value="annual">Annual</option>
+            <option value="annual">Flex-Billing</option>
+          </select>
+        <br>
+        <label for='sales'>Services</label>
+        <br>
+        <label for="sales">Expireds
+           <input type="checkbox" ng-model="saleModel.expireds"
+           ng-true-value="1" ng-false-value="0">
+        </label>
+        <br>
+        <label for="sales">FSBOs
+           <input type="checkbox" ng-model="saleModel.fsbos"
+           ng-true-value="1" ng-false-value="0"
+           >
+        </label>
+        <br>
+        <label for="sales">FRBOs
+           <input type="checkbox" ng-model="saleModel.frbos"
+           ng-true-value="1" ng-false-value="0"
+           >
+        </label>
+        <br>
+        <label for="sales">Preforeclosures
+           <input type="checkbox" ng-model="saleModel.pfcs"
+           ng-true-value="1" ng-false-value="0"
+           >
+        </label>
+        <br>
+        <label for="sales">ONYX
+           <input type="checkbox" ng-model="saleModel.onyx"
+           ng-true-value="1" ng-false-value="0"
+           >
+        </label>
+        <br>
+        <label for="sales">Storm
+           <input type="checkbox" ng-model="saleModel.storm"
+           ng-true-value="1" ng-false-value="0"
+           >
+        </label>
+        <br>
+        <label for="sales">GeoLeads
+           <input type="checkbox" ng-model="saleModel.geo"
+           ng-true-value="1" ng-false-value="0"
+           >
+        </label>
+        <br>
+        <label for="sales">Storm Multiline
+           <input type="checkbox" ng-model="saleModel.stormMulti"
+           ng-true-value="1" ng-false-value="0"
+           >
+        </label>
+        <div class="form-group">
+          <button class="btn btn-primary" ng-disabled="!saleModel.name || !saleModel.amount || !saleModel.setupfee || !saleModel.plan" ng-click="submitSale() ; showSaleTab = !showSaleTab ; $state.go('home')">Submit Sale</button>
+        </div>
+
+        </div>
+        <div class="modal-footer">
+          <button btn="btn btn-primary" data-dismiss="modal">Post Sale</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
