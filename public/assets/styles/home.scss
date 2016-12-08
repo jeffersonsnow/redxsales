@@ -7,7 +7,8 @@ body{
   text-align: center;
 }
 
-// url('/wp-content/themes/theredx/img/logo-icons-61-v2.svg') center no-repeat
+
+
 .product-icon {
     background: url(theredx.com/wp-content/themes/theredx/img/logo-icons-61-v2.svg) center no-repeat;
     width: 83px;
@@ -152,4 +153,26 @@ text-align: left;
 }
 #salebutton:focus{
   outline: 0;
+}
+
+#focusbutton {
+  margin: auto;
+  border-radius: 50%;
+  // text-align: center;
+  line-height: 1px;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+   bottom: 16vh;
+   right: 5vw;
+}
+#focusbutton:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+#focusbutton:focus{
+  outline: 0;
+}
+#pencil {
+  margin-left: -5.5px;
+  margin-top: -2px;
 }

@@ -123,6 +123,26 @@ li {
 #salebutton:focus {
   outline: 0; }
 
+#focusbutton {
+  margin: auto;
+  border-radius: 50%;
+  line-height: 1px;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  bottom: 16vh;
+  right: 5vw; }
+
+#focusbutton:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
+
+#focusbutton:focus {
+  outline: 0; }
+
+#pencil {
+  margin-left: -5.5px;
+  margin-top: -2px; }
+
 .commissionheader {
   margin-top: 60px; }
 
@@ -267,6 +287,26 @@ li {
 #salebutton:focus {
   outline: 0; }
 
+#focusbutton {
+  margin: auto;
+  border-radius: 50%;
+  line-height: 1px;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  bottom: 16vh;
+  right: 5vw; }
+
+#focusbutton:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
+
+#focusbutton:focus {
+  outline: 0; }
+
+#pencil {
+  margin-left: -5.5px;
+  margin-top: -2px; }
+
 body {
   font-family: 'Oswald', sans-serif;
   background: gray; }
@@ -392,6 +432,26 @@ li {
 #salebutton:focus {
   outline: 0; }
 
+#focusbutton {
+  margin: auto;
+  border-radius: 50%;
+  line-height: 1px;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  bottom: 16vh;
+  right: 5vw; }
+
+#focusbutton:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
+
+#focusbutton:focus {
+  outline: 0; }
+
+#pencil {
+  margin-left: -5.5px;
+  margin-top: -2px; }
+
 .quotaheader {
   margin-top: 60px; }
 
@@ -449,3 +509,156 @@ li {
   border-radius: 5px;
   padding: 10px;
   border: 1px solid black; }
+
+body {
+  font-family: 'Oswald', sans-serif;
+  background: gray; }
+
+.jumbotron {
+  text-align: center; }
+
+.product-icon {
+  background: url(theredx.com/wp-content/themes/theredx/img/logo-icons-61-v2.svg) center no-repeat;
+  width: 83px;
+  height: 90px; }
+
+.logo {
+  height: 100%;
+  width: auto; }
+
+li {
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold; }
+
+.dailysalesdoc {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center; }
+
+.dailysalesheader {
+  margin-top: 60px;
+  margin-left: 80px;
+  text-align: left; }
+
+.chip {
+  display: inline-block;
+  padding: 0 25px;
+  height: 50px;
+  font-size: 16px;
+  line-height: 50px;
+  border-radius: 25px;
+  background-color: #f1f1f1;
+  margin-bottom: 10px; }
+
+.chip img {
+  float: left;
+  margin: 0 10px 0 -25px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%; }
+
+.dailybox {
+  border-radius: 10px;
+  min-width: 15vw;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  background-color: #E5E5E0;
+  margin-left: 5px;
+  border: 1px solid black;
+  text-align: center; }
+
+.dailybox:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
+
+.saletag {
+  float: left;
+  height: 40px;
+  width: 60px;
+  margin: -10px -30px 0px -29px;
+  border-radius: 25px;
+  background: url("http://www.theredx.com/wp-content/themes/theredx/img/SideNav-53.svg");
+  background-repeat: no-repeat;
+  background-position: -431px -112px; }
+
+.quotaprogress {
+  height: 10px;
+  width: 80vw; }
+
+.saleboxheader {
+  background-color: #CA1600;
+  display: flex;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin: 0 0 0 0;
+  height: 80px;
+  padding: 10px; }
+
+.salesdivider {
+  background-color: black;
+  height: 10px;
+  width: 100%; }
+
+.thepadder {
+  padding: 10px; }
+
+.well {
+  border: 1px solid black; }
+
+.smallertext {
+  font-size: 10px; }
+
+.dailytotals {
+  margin-top: 10px;
+  background-color: #E5E5E0;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s; }
+
+.dailytotals:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
+
+#salebutton {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  position: fixed;
+  bottom: 7vh;
+  right: 4vw; }
+
+#salebutton:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
+
+#salebutton:focus {
+  outline: 0; }
+
+#focusbutton {
+  margin: auto;
+  border-radius: 50%;
+  line-height: 1px;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  bottom: 16vh;
+  right: 5vw; }
+
+#focusbutton:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
+
+#focusbutton:focus {
+  outline: 0; }
+
+#pencil {
+  margin-left: -5.5px;
+  margin-top: -2px; }
+
+#modal-form {
+  padding: 20px;
+  font-weight: bold;
+  color: black; }
+
+#formheading {
+  text-align: left; }

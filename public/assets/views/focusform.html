@@ -1,0 +1,19 @@
+<div class="modal fade" id="focusform" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
+
+                       <div class="modal-dialog " role="document">
+                           <div class="modal-content">
+                               <form id="modal-form">
+                                   <div id="behavior">
+                                       <h3>What Behavior Will Make You More Money Today?</h3>
+                                   </div>
+
+                                   <div id="newfocus">
+                                       <input ng-model="formModel.focus">
+                                   </div>
+                                   <div class="form-group">
+                                     <button class="btn btn-primary" data-dismiss="modal" ng-disabled="!formModel.focus" ng-click="submitFocus() ; showForm = !showForm">Set Focus</button>
+                                   </div>
+                               </form>
+                           </div>
+                       </div>
+                   </div>

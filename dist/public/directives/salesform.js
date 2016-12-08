@@ -9,7 +9,7 @@ angular.module('app').directive('salesForm', function () {
       $scope.saleModel = {};
       mainService.getUser().then(function (user) {
         $scope.user = user;
-        console.log('is you working', user);
+        // console.log('is you working', user);
       });
 
       $scope.submitSale = function () {

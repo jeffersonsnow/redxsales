@@ -2,26 +2,26 @@
 
 angular.module('app').controller('mainCtrl', ["$scope", "mainService", "$http", "$state", function ($scope, mainService, $http, $state) {
   $scope.test = 'angular is working';
-  $scope.formModel = {};
+  // $scope.formModel = {};
   // $scope.saleModel = {};
   $scope.dailyRevenue = 0;
   $scope.totalDailySales = 0;
   $scope.dollarPerSale = 0;
   $scope.salesByReps = [];
 
-  $scope.submitFocus = function () {
-    $scope.formModel.time = new Date();
-    $scope.formModel.user_id = $scope.user.user_id;
-    swal("Focus Set!", "Go, Man. Go!", "success");
-    $state.reload();
-    // $http.post("postgres://Snow@localhost/redxsalesteam");
-    // mainService.submitFocus($scope.formModel);
-    return $http({
-      method: 'POST',
-      url: 'http://localhost:3000/api/dailyfocus',
-      data: $scope.formModel
-    });
-  };
+  // $scope.submitFocus = function(){
+  //         $scope.formModel.time = new Date();
+  //         $scope.formModel.user_id = $scope.user.user_id;
+  //         swal("Focus Set!", "Go, Man. Go!", "success");
+  //         $state.reload();
+  //         // $http.post("postgres://Snow@localhost/redxsalesteam");
+  //         // mainService.submitFocus($scope.formModel);
+  //         return $http({
+  //            method: 'POST',
+  //            url: 'http://localhost:3000/api/dailyfocus',
+  //            data: $scope.formModel
+  //          });
+  //        };
 
   // $scope.submitSale = function(){
   //   $scope.saleModel.time = new Date();
@@ -43,7 +43,7 @@ angular.module('app').controller('mainCtrl', ["$scope", "mainService", "$http", 
   //   console.log(currentFocus);
   // });
   //
-  $scope.showForm = false;
+  // $scope.showForm = false;
   // $scope.showSaleTab = false;
 
   $scope.getUser = mainService.getUser().then(function (user) {
