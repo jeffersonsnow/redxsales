@@ -10,34 +10,83 @@
 
   {{user.name}}
   <br>
-  Total Sales: {{totalSales}}
+  Total Sales: {{totalSales}}   <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
   <br>
-  Weekly Dollar Per Sale: {{weeklyDollarPerSale}}
+  Weekly Dollar Per Sale: {{weeklyDollarPerSale}}       <span class="glyphicon glyphicon-usd" aria-hidden="true"></span> / <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+
   <br>
-  Setup Fee Revenue = {{setupFeeTotal}}
+  Setup Fee Revenue = {{setupFeeTotal}}       <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>      <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
+
+
   <br>
-  Setup Fee Commissions = {{setupFeeCommission}}
+  Setup Fee Commissions = {{setupFeeCommission}}       <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>      <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
+
+
   <br>
-  Total Revenue = {{totalRevenue}}
+  Total Revenue = {{totalRevenue}}       <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
+
   <br>
-  Revenue Commission = {{revenueCommission}}
+  Revenue Commission = {{revenueCommission}}       <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>       <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
+
+
   <br>
-  Total Commissions = {{totalCommissions}}
+  Total Commissions = {{totalCommissions}}       <span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>
+
   <br>
   You're at {{commissionPercentage}}% for the week!
   </div>
     </div>
 </div>
 
-
+<div class="container commissionstyle">
+  <div class="row">
+    <div class="col-md-2">
+      <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
+    </div>
+    <div class="col-md-2">
+      <span class="glyphicon glyphicon-usd" aria-hidden="true"></span> / <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+    </div>
+    <div class="col-md-1">
+      <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+    </div>
+    <div class="col-md-1">
+      <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
+    </div>
+    <div class="col-md-1">
+      <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
+    </div>
+    <div class="col-md-1">
+      <span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>
+    </div>
+  </div>
+</div>
 
 
 <div class="container">
 <div class="row">
-  <div class="grid" ng-grid="gridOpts"></div>
+  <!-- <div class="grid" ng-grid="gridOpts"></div> -->
 </div>
+</div>
+<div class="container salesforweek">
+  <div class="row">
+    <div class="col-md-4 salesfilter">
+<input ng-model="thisFilter" placeholder="Search Sales"></input>
+    </div>
+  </div>
+  <div class="row">
+
+      <div class="well col-md-3 salewell" ng-repeat="sale in sales | orderBy: '-date_sold' | filter: thisFilter ">
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>  {{sale.customer_name}} <span class="smallertext">{{sale.date_sold | date:"short"}}</span><span class="pull-right">${{sale.amount}}</span>
+    </div>
+
+  </div>
 
 </div>
+
+
+
+
+
 
 <div>
   <sales-form></sales-form>

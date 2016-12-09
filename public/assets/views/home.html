@@ -2,8 +2,18 @@
 <!-- <div class="container-fluid">
   <h1>Daily Sales</h1>
 </div> -->
-<div class="dailysalesheader">
-  <h1>Daily Sales <span class="focus pull-right">Current Focus: {{currentFocus.focus}} <span class="smallertext">set on {{currentFocus.focus_date | date: "short"}}</span></span></h1>
+<div class="dailysalesheader container-fluid">
+  <div class="row">
+
+    <div class="col-md-3">
+      <h1>Daily Sales</h1>
+    </div>
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <h1>Current Focus: {{currentFocus.focus}} <span class="smallertext">set on {{currentFocus.focus_date | date: "short"}}</span></h1>
+    </div>
+  </div>
+  <!-- <h1>Daily Sales <span class="focus pull-right">Current Focus: {{currentFocus.focus}} <span class="smallertext">set on {{currentFocus.focus_date | date: "short"}}</span></span></h1> -->
 </div>
 
 <div id="page-content "class="container-fluid">
@@ -22,10 +32,13 @@
     <div class="well well-sm" ng-repeat="sale in dailysales | filter: {user_id : uniqueuser.user_id}">
         <div class="saletag"></div>{{sale.amount}}
         </div>
-        <div class="well well-sm" ng-repeat="array in salesByReps | filter: {id : uniqueuser.user_id}">
-          Total: {{array.total}}
+        <div class="well well-sm totalcell" ng-repeat="array in salesByReps | filter: {id : uniqueuser.user_id}">
+          {{array.totalSales}} Sales
           <br>
-          Dollar / Sale: {{array.personalDollarPerSale}}
+          Total: ${{array.total}}
+          <br>
+          Dollar / Sale: ${{array.personalDollarPerSale}}
+          <br>
     </div>
     </div>
 </div>
@@ -39,27 +52,18 @@
     <div class="col-md-1">
     </div>
 
-<div class="col-md-7 dailytotals">
-  <h2>Daily Team Total: {{dailyRevenue}}</h2>
+<div class="col-md-10 dailytotals">
+  <h1>Daily Team Total: ${{dailyRevenue}}</h1>
 
-  <h2>Total Daily Sales: {{totalDailySales}}</h2>
+  <h1>Total Daily Sales: {{totalDailySales}}</h1>
 
-  <h2>Dollar Per Sale: {{dollarPerSale}}</h2>
+  <h1>Dollar Per Sale: ${{dollarPerSale}}</h1>
 </div>
-<div class="col-md-4">
 
-    <h2>Current Focus: {{currentFocus.focus}} <span class="smallertext">set on {{currentFocus.focus_date | date: "short"}}</span></h2>
-  </div>
 
 
   </div>
-  <div class="row">
-  <div class="col-md-1"></div>
-  <div class="col-md-7 focuspane">
-    <div class="">
-    </div>
 
-  </div>
   </div>
 
 

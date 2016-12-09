@@ -28,7 +28,7 @@ li {
 
 .dailysalesheader {
   margin-top: 60px;
-  margin-left: 80px;
+  margin-left: 50px;
   text-align: left; }
 
 .chip {
@@ -98,8 +98,12 @@ li {
 .smallertext {
   font-size: 10px; }
 
+.totalcell {
+  text-align: left; }
+
 .dailytotals {
   margin-top: 10px;
+  margin-bottom: 20px;
   background-color: #E5E5E0;
   border: 1px solid black;
   border-radius: 10px;
@@ -130,7 +134,7 @@ li {
   height: 40px;
   width: 40px;
   position: fixed;
-  bottom: 16vh;
+  top: 10vh;
   right: 5vw; }
 
 #focusbutton:hover {
@@ -162,6 +166,24 @@ li {
   overflow-x: hidden;
   overflow-y: hidden; }
 
+.commissionstyle {
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+  padding: 10px; }
+
+.salesforweek {
+  background-color: #E5E5E0; }
+
+.salewell {
+  margin-top: 10px; }
+
+.salesfilter {
+  margin-top: 10px; }
+
+.focusheader {
+  margin-top: 60px; }
+
 body {
   font-family: 'Oswald', sans-serif;
   background: gray; }
@@ -192,7 +214,7 @@ li {
 
 .dailysalesheader {
   margin-top: 60px;
-  margin-left: 80px;
+  margin-left: 50px;
   text-align: left; }
 
 .chip {
@@ -262,8 +284,12 @@ li {
 .smallertext {
   font-size: 10px; }
 
+.totalcell {
+  text-align: left; }
+
 .dailytotals {
   margin-top: 10px;
+  margin-bottom: 20px;
   background-color: #E5E5E0;
   border: 1px solid black;
   border-radius: 10px;
@@ -294,7 +320,7 @@ li {
   height: 40px;
   width: 40px;
   position: fixed;
-  bottom: 16vh;
+  top: 10vh;
   right: 5vw; }
 
 #focusbutton:hover {
@@ -337,7 +363,7 @@ li {
 
 .dailysalesheader {
   margin-top: 60px;
-  margin-left: 80px;
+  margin-left: 50px;
   text-align: left; }
 
 .chip {
@@ -407,8 +433,12 @@ li {
 .smallertext {
   font-size: 10px; }
 
+.totalcell {
+  text-align: left; }
+
 .dailytotals {
   margin-top: 10px;
+  margin-bottom: 20px;
   background-color: #E5E5E0;
   border: 1px solid black;
   border-radius: 10px;
@@ -439,7 +469,7 @@ li {
   height: 40px;
   width: 40px;
   position: fixed;
-  bottom: 16vh;
+  top: 10vh;
   right: 5vw; }
 
 #focusbutton:hover {
@@ -540,7 +570,7 @@ li {
 
 .dailysalesheader {
   margin-top: 60px;
-  margin-left: 80px;
+  margin-left: 50px;
   text-align: left; }
 
 .chip {
@@ -610,8 +640,12 @@ li {
 .smallertext {
   font-size: 10px; }
 
+.totalcell {
+  text-align: left; }
+
 .dailytotals {
   margin-top: 10px;
+  margin-bottom: 20px;
   background-color: #E5E5E0;
   border: 1px solid black;
   border-radius: 10px;
@@ -642,7 +676,7 @@ li {
   height: 40px;
   width: 40px;
   position: fixed;
-  bottom: 16vh;
+  top: 10vh;
   right: 5vw; }
 
 #focusbutton:hover {
@@ -662,3 +696,10 @@ li {
 
 #formheading {
   text-align: left; }
+
+.longform {
+  width: 100%;
+  margin-bottom: 10px; }
+
+.salesub {
+  margin-bottom: 20px; }

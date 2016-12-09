@@ -38,7 +38,7 @@ li {
 
 .dailysalesheader {
 margin-top: 60px;
-margin-left: 80px;
+margin-left: 50px;
 text-align: left;
 }
 
@@ -127,10 +127,14 @@ text-align: left;
 .smallertext{
   font-size: 10px;
 }
+.totalcell{
+  text-align: left;
+}
 .dailytotals{
   // position: fixed;
   // right: 63px;
   margin-top: 10px;
+  margin-bottom: 20px;
   background-color: #E5E5E0;
   border: 1px solid black;
   border-radius: 10px;
@@ -163,7 +167,8 @@ text-align: left;
   height: 40px;
   width: 40px;
   position: fixed;
-   bottom: 16vh;
+  //  bottom: 16vh;
+   top: 10vh;
    right: 5vw;
 }
 #focusbutton:hover {

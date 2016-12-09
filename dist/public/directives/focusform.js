@@ -14,7 +14,11 @@ angular.module('app').directive('focusForm', function () {
         $scope.formModel.time = new Date();
         $scope.formModel.user_id = $scope.user.user_id;
         swal("Focus Set!", "Go, Man. Go!", "success");
-        $state.reload();
+        setTimeout(function () {
+          $state.reload();
+        }, 1500);
+        // $state.reload();
+        // $scope.$digest();
         return $http({
           method: 'POST',
           url: 'http://localhost:3000/api/dailyfocus',
