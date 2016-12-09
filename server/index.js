@@ -3,10 +3,10 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var massive = require('massive');
 var session = require('express-session');
-var connectionString = "postgres://Snow@localhost/redxsalesteam";
-var massiveInstance = massive.connectSync({connectionString : connectionString});
-
 var config = require('./config.js');
+// var connectionString = "postgres://Snow@localhost/redxsalesteam";
+var connectionString = config.elephantsql;
+var massiveInstance = massive.connectSync({connectionString : connectionString});
 var passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
 
