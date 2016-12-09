@@ -21,7 +21,7 @@ angular.module('app').directive('focusForm', function () {
         // $scope.$digest();
         return $http({
           method: 'POST',
-          url: 'http://localhost:3000/api/dailyfocus',
+          url: '/api/dailyfocus',
           data: $scope.formModel
         });
       };

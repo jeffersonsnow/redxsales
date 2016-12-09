@@ -25,7 +25,7 @@ angular.module('app').directive('salesForm', function () {
         console.log($scope.saleModel);
         return $http({
           method: 'POST',
-          url: 'http://localhost:3000/api/sales',
+          url: '/api/sales',
           data: $scope.saleModel
         });
       };

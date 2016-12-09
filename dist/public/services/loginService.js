@@ -4,7 +4,7 @@ angular.module('app').service('loginService', ["$http", function ($http) {
   this.checkAuthentication = function () {
     return $http({
       method: "GET",
-      url: "http://localhost:3000/api/authentication"
+      url: "/api/authentication"
     }).then(function (response) {
       console.log('From Service');
       if (response.status === 200) {

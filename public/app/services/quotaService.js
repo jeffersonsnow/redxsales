@@ -2,7 +2,7 @@ angular.module('app').service('quotaService', function($http){
   this.getQuota = function(){
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/api/monthlyquota/',
+      url: '/api/monthlyquota/',
     }).then(function(response){
       if(response.status === 200){
         return response.data;
@@ -14,7 +14,7 @@ angular.module('app').service('quotaService', function($http){
     console.log(id);
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/api/monthlytotal/' + id
+      url: '/api/monthlytotal/' + id
     }).then(function(response){
       if(response.status === 200){
         return response.data;
