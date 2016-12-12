@@ -1,40 +1,54 @@
-<h1>This is the admin page</h1>
 
-{{admintest}}
-<br>
-Current quota: ${{quota.quota_amount}}
-
-<br>
-
-Monthly Team Total: ${{monthlyTeamTotal}}
-<div>
-  <button ng-click="showQuotaTab = !showQuotaTab">Set Quota</button>
-</div>
-<div class"quota-submit" ng-show="showQuotaTab" >
-  <label for='sales'>Enter New Monthly Quota Mark</label>
-    <input ng-model="quotaModel.quota_amount"></input>
-    <div class="form-group">
-      <button class="btn btn-primary" ng-disabled="!quotaModel.quota_amount" ng-click="submitQuota() ; showQuotaTab = !showQuotaTab">Submit New Quota</button>
+<div class="container adminheader">
+  <div class="row">
+    <div class="col-md-1">
+      <h1>Admin</h1>
     </div>
-    <pre>{{quotaModel | json}}</pre>
-</div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <br>
+      Current quota: ${{quota.quota_amount}}
 
+      <br>
 
-<div ng-repeat="user in users" class="container">
-  Sales Rep: {{user.name}}
-  <div ng-repeat="array in salesByReps | filter: {id : user.user_id}">
-    <div class="container">
-      <progress value="{{array.total}}" max="{{quota.quota_amount}}">0%</progress>
-
-    <!-- <div class="progress">
-      <div class="progress-bar" role="progressbar"
-      value="0" max="{{quota.quota_amount}}" style="width:300px"> -->
-        <!-- {{quotaPercent}}% -->
-        <br>
-        <p>${{array.total}} / ${{quota.quota_amount}}</p>
+      Monthly Team Total: ${{monthlyTeamTotal}}
+    </div>
+  </div>
+  <div class="row">
+<div class="col-md-3">
+  <div>
+    <button ng-click="showQuotaTab = !showQuotaTab">Set Quota</button>
+  </div>
+  <div class"quota-submit" ng-show="showQuotaTab" >
+    <label for='sales'>Enter New Monthly Quota Mark</label>
+      <input ng-model="quotaModel.quota_amount"></input>
+      <div class="form-group">
+        <button class="btn btn-primary" ng-disabled="!quotaModel.quota_amount" ng-click="submitQuota() ; showQuotaTab = !showQuotaTab">Submit New Quota</button>
       </div>
+  </div>
+</div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <h3>Monthly Rep Performance</h3>
     </div>
-    </div>
+  </div>
+  <div class="row">
+    <div ng-repeat="user in users" class="container">
+      Sales Rep: {{user.name}}
+      <div ng-repeat="array in salesByReps | filter: {id : user.user_id}">
+        <div class="container">
+          <progress value="{{array.total}}" max="{{quota.quota_amount}}">0%</progress>
+
+          <p>${{array.total}} / ${{quota.quota_amount}}</p>
+  </div>
+</div>
+
+
+
+
+
 
     <div>
       <sales-form></sales-form>

@@ -46,7 +46,7 @@ angular.module('app').service('mainService', ["$http", function ($http) {
     }).then(function (response) {
       console.log(response);
       if (response.status === 200) {
-        console.log(response);
+        console.log(response, 'this is sales today');
         return response.data;
       }
     });

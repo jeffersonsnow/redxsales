@@ -2,6 +2,9 @@
 .commissionheader{
   margin-top: 60px;
 }
+.adminheader{
+  margin-top: 60px;
+}
 .commissioncontainer{
   background-color: black;
   border-radius: 5px;
@@ -26,12 +29,36 @@
   padding: 10px;
 }
 .salesforweek{
+  margin-top: 20px;
   background-color: #E5E5E0;
+  border-radius: 5px;
+
 }
 .salewell{
   margin-top: 10px;
 
+
+
 }
 .salesfilter{
   margin-top: 10px;
+}
+
+.total-sales{
+  font-size: 40px;
+  color: green;
+  text-align: center;
+}
+.money{
+  font-size: 55px;
+  // line-height: 15px;
+}
+
+.total-sales2{
+  font-size: 20px;
+  text-align: center;
+  color: white;
+}
+.commish{
+  text-align: right;
 }

@@ -14,7 +14,7 @@ angular.module('app').directive('focusForm', function(){
             swal("Focus Set!", "Go, Man. Go!", "success");
             setTimeout(function(){
                 $state.reload();
-            }, 1500);
+            }, 1000);
             // $state.reload();
             // $scope.$digest();
             return $http({

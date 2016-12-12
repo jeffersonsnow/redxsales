@@ -9,6 +9,23 @@ angular.module('app').controller('commissionCtrl', ["$scope", "mainService", "co
   $scope.revenueCommission = 0;
   $scope.totalCommissions = 0;
   $scope.commissionPercentage = 5;
+  $scope.graphPercent = 100 * ($scope.commissionPercentage / 15);
+  var updatecommissionbar = function updatecommissionbar() {
+    console.log($scope.commissionPercentage);
+    if ($scope.commissionPercentage <= 5) {
+      $scope.class = "progress-bar progress-bar-danger";
+    }
+    if ($scope.commissionPercentage > 5 && $scope.commissionPercentage < 10) {
+      $scope.class = "progress-bar progress-bar-warning";
+    }
+    if ($scope.commissionPercentage >= 10 && $scope.commissionPercentage <= 14) {
+      $scope.class = "progress-bar progress-bar-success";
+    }
+    if ($scope.commissionPercentage > 14) {
+      $scope.class = "progress-bar progress-bar-primary";
+    }
+  };
+
   mainService.getUser().then(function (user) {
     $scope.user = user;
     $scope.id = user.user_id;
@@ -65,14 +82,9 @@ angular.module('app').controller('commissionCtrl', ["$scope", "mainService", "co
       console.log($scope.sales);
       $scope.weeklyDollarPerSale = Number($scope.totalRevenue) / Number($scope.totalSales);
       $scope.weeklyDollarPerSale = $scope.weeklyDollarPerSale.toFixed(2);
+      $scope.graphPercent = 100 * ($scope.commissionPercentage / 15);
+      $scope.graphPercent = $scope.graphPercent.toFixed(0);
+      updatecommissionbar();
     });
   });
-
-  $scope.gridOpts = {
-    data: 'sales',
-    resizable: 'true',
-    // sortInfo: {fields: ['customer_name', 'amount'], directions: ['asc']},
-    columnDefs: [{ field: 'customer_name', displayName: 'Customer' }, { field: 'amount', displayName: 'Sale' }, { field: 'date_sold | date:"short"', displayName: 'Sold On' }],
-    plugins: [new commissionService.ngGridFlexibleHeightPlugin()]
-  };
 }]);

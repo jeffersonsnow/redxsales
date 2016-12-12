@@ -41,7 +41,7 @@ module.exports = {
   },
 
   checkAuth: function(req, res, next){
-    console.log(req.user);
+    // console.log(req.user);
     if(req.user){
       res.json(req.user);
     } else {
@@ -52,16 +52,16 @@ module.exports = {
 
   postSale: function(req, res, next){
     var body = req.body;
-    console.log(req.body);
+    console.log(req.body.time, 'this is date coming back');
     db.post_sale([body.rep, body.time, body.name, body.amount, body.setupfee, body.plan,
       body.expireds, body.fsbos, body.frbos, body.pfcs, body.onyx, body.storm,
       body.geo, body.stormMulti, body.user_id], function(err, response){
         if(err){
           console.log("error, dude!", err);
-          res.json(err);
+          return res.json(err);
         }
         else {
-        console.log("Sale posted?", response);
+        console.log("Sale posted?");
         res.json(response);
       }
     });

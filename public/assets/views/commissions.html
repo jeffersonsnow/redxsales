@@ -4,78 +4,74 @@
 
 <div class="container commissioncontainer">
   <div class="row">
-
-<div class="col-md-3">
-
-
-  {{user.name}}
-  <br>
-  Total Sales: {{totalSales}}   <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
-  <br>
-  Weekly Dollar Per Sale: {{weeklyDollarPerSale}}       <span class="glyphicon glyphicon-usd" aria-hidden="true"></span> / <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-
-  <br>
-  Setup Fee Revenue = {{setupFeeTotal}}       <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>      <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
-
-
-  <br>
-  Setup Fee Commissions = {{setupFeeCommission}}       <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>      <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
-
-
-  <br>
-  Total Revenue = {{totalRevenue}}       <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
-
-  <br>
-  Revenue Commission = {{revenueCommission}}       <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>       <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
-
-
-  <br>
-  Total Commissions = {{totalCommissions}}       <span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>
-
-  <br>
-  You're at {{commissionPercentage}}% for the week!
+    <div class="col-md-2 commish">
+    <h3>{{user.name}}</h3>
+    <br></div>
   </div>
-    </div>
-</div>
-
-<div class="container commissionstyle">
   <div class="row">
-    <div class="col-md-2">
-      <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
-    </div>
-    <div class="col-md-2">
-      <span class="glyphicon glyphicon-usd" aria-hidden="true"></span> / <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-    </div>
-    <div class="col-md-1">
-      <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
-    </div>
-    <div class="col-md-1">
-      <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
-    </div>
-    <div class="col-md-1">
-      <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
-    </div>
-    <div class="col-md-1">
-      <span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>
-    </div>
+<div class="col-md-3 commish">
+<p>Weekly Commission Rate:</p>
+</div>
+<div class="col-md-8">
+<div  class="progress">
+<div id="commissionrategraph" ng-class="class" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:{{graphPercent}}%">
+  {{commissionPercentage}}%
+</div>
+</div>
+</div>
+<!-- line-chart bank bar-chart dollar money trophy tag tags-->
+</div>
+<div class="row">
+  <div class="total-sales col-md-1">
+  </div>
+  <div  class="total-sales col-md-2">
+    <span title="Total Weekly Sales" class="glyphicon glyphicon-tags" aria-hidden="true"></span>
+    <br>
+    <span class="total-sales2">{{totalSales}}</span>
+  </div>
+  <div class="total-sales col-md-2">
+    <i title="Dollar Per Sale" class="fa fa-money money" aria-hidden="true"></i> / <span title="Dollar Per Sale" class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+    <br>
+    <span class="total-sales2">${{weeklyDollarPerSale}}</span>
+  </div>
+  <div class="total-sales col-md-2">
+    <i title="Set Up Fee Revenue" class="fa fa-cogs money" aria-hidden="true"></i>
+    <br>
+    <span class="total-sales2">${{setupFeeTotal}}</span>
+  </div>
+  <div class="total-sales col-md-2">
+  <i title="Total Weekly Revenue" class="fa fa-line-chart money" aria-hidden="true"></i>
+  <br>
+  <span class="total-sales2">${{totalRevenue}}</span>
+  </div>
+  <div class="total-sales col-md-2">
+     <span title="Total Weekly Commissions"  class="glyphicon glyphicon-piggy-bank money" aria-hidden="true"></span>
+     <br>
+     <span class="total-sales2">${{totalCommissions}}</span>
+  </div>
+  <div class="total-sales col-md-1">
   </div>
 </div>
 
 
-<div class="container">
-<div class="row">
-  <!-- <div class="grid" ng-grid="gridOpts"></div> -->
-</div>
-</div>
+
+    </div>
+
+
+
+
+
+
 <div class="container salesforweek">
   <div class="row">
     <div class="col-md-4 salesfilter">
-<input ng-model="thisFilter" placeholder="Search Sales"></input>
+<input ng-model="thisFilter" placeholder="Search Sales">
+</input> <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
     </div>
   </div>
   <div class="row">
 
-      <div class="well col-md-3 salewell" ng-repeat="sale in sales | orderBy: '-date_sold' | filter: thisFilter ">
+      <div class="well col-md-4 salewell" ng-repeat="sale in sales | orderBy: '-date_sold' | filter: thisFilter ">
         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>  {{sale.customer_name}} <span class="smallertext">{{sale.date_sold | date:"short"}}</span><span class="pull-right">${{sale.amount}}</span>
     </div>
 
@@ -83,6 +79,7 @@
 
 </div>
 
+<!-- ng-repeat="sale in sales | orderBy: '-date_sold' | filter: thisFilter " -->
 
 
 

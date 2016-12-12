@@ -30,7 +30,7 @@
 <div class="salesdivider"></div>
   <div class="thepadder">
     <div class="well well-sm" ng-repeat="sale in dailysales | filter: {user_id : uniqueuser.user_id}">
-        <div class="saletag"></div>{{sale.amount}}
+        <div class="saletag"></div>{{sale.amount}} 
         </div>
         <div class="well well-sm totalcell" ng-repeat="array in salesByReps | filter: {id : uniqueuser.user_id}">
           {{array.totalSales}} Sales

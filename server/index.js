@@ -1,5 +1,7 @@
-var express = require('express');
-var bodyParser = require('body-parser');
+// var express = require('express');
+const express = require('express');
+// var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 var cors = require('cors');
 var massive = require('massive');
 var session = require('express-session');
@@ -45,7 +47,7 @@ passport.use(new GoogleStrategy({
         });
       } else {
         console.log("Existing user found.");
-        console.log(profile);
+        // console.log(profile);
         return done(null, dbRes);
       }
     });

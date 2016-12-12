@@ -25,6 +25,7 @@ create table sales (
   user_id integer references users(user_id)
 );
 
+
 create table dailyfocus (
   focus_id serial primary key not null,
   focus text,
@@ -39,12 +40,41 @@ create table monthlyquota (
 );
 
 
-
+insert into users (user_id, name, type, google_id, photo)
+values (2, Tyler Fenn, client, dfaf3223, https://lh3.googleusercontent.com/-A1RmvFoubQI/AAAAAAAAAAI/AAAAAAAAAKU/nFbuhA1OQ3s/s60-p-rw-no/photo.jpg)
+  ;
   -- insert into monthlyquota (quota_amount, quota_time)
   -- values (27352, current_timestamp)
   --
   -- ;
   --
+
+-- changing new timestamp
+
+-- create table sales (
+--   sales_id serial primary key not null,
+--   rep text,
+--   date_sold timestamp default current_timestamp,
+--   customer_name text,
+--   amount numeric,
+--   setup_fee numeric,
+--   plan text,
+--   expireds integer,
+--   fsbos integer,
+--   frbos integer,
+--   preforeclosures integer,
+--   onyx integer,
+--   storm integer,
+--   geoleads integer,
+--   multiline integer,
+--   user_id integer references users(user_id)
+-- );
+
+
+
+timestamp timestamp default current_timestamp
+
+
 
 
 -- SELECT * FROM sales
