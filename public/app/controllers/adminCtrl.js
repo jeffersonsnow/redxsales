@@ -10,6 +10,8 @@ angular.module('app').controller('adminCtrl', function($scope, mainService, admi
     $scope.users = users;
   });
 
+
+
   quotaService.getQuota().then(function(quota){
       $scope.quota = quota[0];
       console.log($scope.quota);
