@@ -51,7 +51,9 @@ angular.module('app').controller('mainCtrl', ["$scope", "mainService", "$http", 
       $scope.totalDailySales++;
     }
     $scope.dailyRevenue = $scope.dailyRevenue.toFixed(2);
-    $scope.dollarPerSale = Number($scope.dailyRevenue) / Number($scope.totalDailySales);
+    // $scope.dollarPerSale = Number($scope.dailyRevenue) / Number($scope.totalDailySales);
+    $scope.dailyRevenue > 0 ? $scope.dollarPerSale = Number($scope.dailyRevenue) / Number($scope.totalDailySales) : 0;
+
     $scope.dollarPerSale = $scope.dollarPerSale.toFixed(2);
   });
 }]);

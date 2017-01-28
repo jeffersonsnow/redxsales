@@ -78,7 +78,7 @@ angular.module('app').controller('commissionCtrl', function($scope, mainService,
             }
       $scope.totalCommissions = (Number($scope.revenueCommission) + Number($scope.setupFeeCommission)).toFixed(2);
       console.log($scope.sales);
-      $scope.weeklyDollarPerSale = Number($scope.totalRevenue) / Number($scope.totalSales);
+      $scope.totalRevenue > 0 ? $scope.weeklyDollarPerSale = Number($scope.totalRevenue) / Number($scope.totalSales) : 0;
       $scope.weeklyDollarPerSale = ($scope.weeklyDollarPerSale).toFixed(2);
       $scope.graphPercent = 100 * ($scope.commissionPercentage / 15);
       $scope.graphPercent = ($scope.graphPercent).toFixed(0);
