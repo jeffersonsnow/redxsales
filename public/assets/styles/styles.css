@@ -202,6 +202,9 @@ li {
 .commish {
   text-align: right; }
 
+.specialrow {
+  padding: 10px; }
+
 .focusheader {
   margin-top: 60px; }
 
@@ -716,7 +719,15 @@ li {
   color: black; }
 
 #formheading {
-  text-align: left; }
+  text-align: left;
+  background-color: #CA1600;
+  color: white;
+  height: 50px;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  padding: 8px;
+  padding-left: 15px;
+  font-size: 24px; }
 
 .longform {
   width: 100%;

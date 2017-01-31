@@ -72,7 +72,7 @@
 </input> <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
     </div>
   </div>
-  <div class="row">
+  <div class="row specialrow">
 
       <div class="well col-md-4 salewell" ng-repeat="sale in sales | orderBy: '-date_sold' | filter: thisFilter ">
         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>  {{sale.customer_name}} <span class="smallertext">{{sale.date_sold | date:"short"}}</span><span class="pull-right">${{sale.amount}}</span>
